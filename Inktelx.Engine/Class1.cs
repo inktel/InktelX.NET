@@ -10,7 +10,7 @@ namespace Inktelx.Engine
         public string Test;
 
 
-		//this model is crap, wait until you see what I am going tio chekin
+		//this model is crap, wait until you see what I am going tio chekin 
 
     }
 }
