@@ -1,0 +1,7 @@
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\bin\Inktelx.Web.dll
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\bin\Inktelx.Web.pdb
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\bin\EntityFramework.dll
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\bin\EntityFramework.xml
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\obj\Debug\Inktelx.Web.dll
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web\obj\Debug\Inktelx.Web.pdb

@@ -1,0 +1,8 @@
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.Tests.dll.config
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.Tests.dll
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.Tests.pdb
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.dll
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.pdb
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\obj\Debug\Inktelx.Web.Tests.dll
+C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\obj\Debug\Inktelx.Web.Tests.pdb
