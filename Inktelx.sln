@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inktelx.Web", "Inktelx.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inktelx.Web.Tests", "Inktelx.Web.Tests\Inktelx.Web.Tests.csproj", "{2329ACEF-0B69-43DF-9354-1CDFF4B34611}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inktelx.Engine", "Inktelx.Engine\Inktelx.Engine.csproj", "{509C127D-D303-4418-8DA6-EC758254293B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2329ACEF-0B69-43DF-9354-1CDFF4B34611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2329ACEF-0B69-43DF-9354-1CDFF4B34611}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2329ACEF-0B69-43DF-9354-1CDFF4B34611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{509C127D-D303-4418-8DA6-EC758254293B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{509C127D-D303-4418-8DA6-EC758254293B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{509C127D-D303-4418-8DA6-EC758254293B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{509C127D-D303-4418-8DA6-EC758254293B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
