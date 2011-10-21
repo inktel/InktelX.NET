@@ -6,6 +6,7 @@ using System.Text;
 namespace Inktelx.Engine
 {
     public class Class1
-    { 
+    {
+        public string Test;
     }
 }
