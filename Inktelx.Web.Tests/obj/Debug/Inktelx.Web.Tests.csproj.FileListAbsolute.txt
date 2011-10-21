@@ -9,8 +9,8 @@ C:\Projects\LocalGitWorkingFolder\Inktelx\Inktelx.Web.Tests\obj\Debug\Inktelx.We
 C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.Tests.dll.config
 C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.Tests.dll
 C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.Tests.pdb
-C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.dll
-C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\Inktelx.Web.pdb
+C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\InktelX.Web.dll
+C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\bin\Debug\InktelX.Web.pdb
 C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\obj\Debug\Inktelx.Web.Tests.dll
 C:\SourceSafe2\InktelX.NET\InktelX.NET\Inktelx.Web.Tests\obj\Debug\Inktelx.Web.Tests.pdb
