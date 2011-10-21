@@ -1,0 +1,31 @@
+THE SOURCE CODE CONTAINED IN THIS REPOSITORY IS THE SOLE PROPERTY OF INKTEL DIRECT.
+YOU ARE THEREBY PROHIBITED FROM COPYING, DISTRIBUTING, MODIFYING, OR DOWNLOADING OF THIS SOURCE CODE
+UNLESS YOU HAVE BEEN GIVEN EXPRESS WRITTEN PERMISSION FROM A DIRECTOR OF INKTEL DIRECT CORPORATION.
+
+Welcome to Inktelx's GitHub repository
+
+Inktelx is a revolutionary communications platform provided by Inktel Direct's Application Services team. 
+
+The primary goal of this platform is to deliver a relevant and current framework for delivering various communications technologies for contact centers. 
+As it evolves, part of its road map will include expansion into consumer-facing services.
+
+Key factors for our choice of a technology stack includes:
+a. Platform must be highly reliable and empowered by an Open Source technology stack.
+b. Platform must support horizontal and vertical scaling with very minimal effort.
+c. Platform must not be bound to proprietary licensing costs.
+
+As a result of the aforementioned goals, the technology stack is as follows:
+a. Platform will be designed using the Mono Framework
+b. Platform will be deployed on the Linux operating system (CentOS or Ubuntu distributions)
+c. Platform will be served using the popular Apache Web Server
+d. Platform data repository will reside within MySQL databases
+
+The directory structure is currently setup as follows:
+
+1. Inktelx.Data - contains all the data access coding for this platform
+
+2. Inktelx.Engine - contains all business rules associated with the Inktelx solution.
+
+3. Inktelx.Web - stores the MVC web application for Inktelx 
+
+Copyright (c) 2011. All rights reserved. Inktel Direct Corporation.
