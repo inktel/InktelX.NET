@@ -1,0 +1,1 @@
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleSample\obj\x86\Debug\ResolveAssemblyReference.cache

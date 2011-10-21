@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vicidialModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="VicidialEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="vicidial_admin_log" EntityType="vicidialModel.vicidial_admin_log" />
+    <EntitySet Name="vicidial_call_times" EntityType="vicidialModel.vicidial_call_times" />
+    <EntitySet Name="vicidial_campaign_hotkeys" EntityType="vicidialModel.vicidial_campaign_hotkeys" />
+    <EntitySet Name="vicidial_campaign_stats" EntityType="vicidialModel.vicidial_campaign_stats" />
+    <EntitySet Name="vicidial_campaign_stats_debug" EntityType="vicidialModel.vicidial_campaign_stats_debug" />
+    <EntitySet Name="vicidial_campaign_statuses" EntityType="vicidialModel.vicidial_campaign_statuses" />
+    <EntitySet Name="vicidial_campaigns" EntityType="vicidialModel.vicidial_campaigns" />
+    <EntitySet Name="vicidial_inbound_groups" EntityType="vicidialModel.vicidial_inbound_groups" />
+    <EntitySet Name="vicidial_lead_recycle" EntityType="vicidialModel.vicidial_lead_recycle" />
+    <EntitySet Name="vicidial_log" EntityType="vicidialModel.vicidial_log" />
+    <EntitySet Name="vicidial_pause_codes" EntityType="vicidialModel.vicidial_pause_codes" />
+    <EntitySet Name="vicidial_statuses" EntityType="vicidialModel.vicidial_statuses" />
+    <EntitySet Name="vicidial_user_groups" EntityType="vicidialModel.vicidial_user_groups" />
+    <EntitySet Name="vicidial_users" EntityType="vicidialModel.vicidial_users" />
+    <EntitySet Name="vicidial_xfer_presets" EntityType="vicidialModel.vicidial_xfer_presets" />
+    <EntitySet Name="vicidial_xfer_stats" EntityType="vicidialModel.vicidial_xfer_stats" />
+  </EntityContainer>
+  <EntityType Name="vicidial_admin_log">
+    <Key>
+      <PropertyRef Name="admin_log_id" />
+    </Key>
+    <Property Name="admin_log_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="event_date" Type="DateTime" Nullable="false" />
+    <Property Name="user" Type="String" Nullable="false" />
+    <Property Name="ip_address" Type="String" Nullable="false" />
+    <Property Name="event_section" Type="String" Nullable="false" />
+    <Property Name="event_type" Type="String" />
+    <Property Name="record_id" Type="String" Nullable="false" />
+    <Property Name="event_code" Type="String" Nullable="false" />
+    <Property Name="event_sql" Type="String" />
+    <Property Name="event_notes" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_call_times">
+    <Key>
+      <PropertyRef Name="call_time_id" />
+    </Key>
+    <Property Name="call_time_id" Type="String" Nullable="false" />
+    <Property Name="call_time_name" Type="String" Nullable="false" />
+    <Property Name="call_time_comments" Type="String" />
+    <Property Name="ct_default_start" Type="Int32" Nullable="false" />
+    <Property Name="ct_default_stop" Type="Int32" Nullable="false" />
+    <Property Name="ct_sunday_start" Type="Int32" />
+    <Property Name="ct_sunday_stop" Type="Int32" />
+    <Property Name="ct_monday_start" Type="Int32" />
+    <Property Name="ct_monday_stop" Type="Int32" />
+    <Property Name="ct_tuesday_start" Type="Int32" />
+    <Property Name="ct_tuesday_stop" Type="Int32" />
+    <Property Name="ct_wednesday_start" Type="Int32" />
+    <Property Name="ct_wednesday_stop" Type="Int32" />
+    <Property Name="ct_thursday_start" Type="Int32" />
+    <Property Name="ct_thursday_stop" Type="Int32" />
+    <Property Name="ct_friday_start" Type="Int32" />
+    <Property Name="ct_friday_stop" Type="Int32" />
+    <Property Name="ct_saturday_start" Type="Int32" />
+    <Property Name="ct_saturday_stop" Type="Int32" />
+    <Property Name="ct_state_call_times" Type="String" />
+    <Property Name="default_afterhours_filename_override" Type="String" />
+    <Property Name="sunday_afterhours_filename_override" Type="String" />
+    <Property Name="monday_afterhours_filename_override" Type="String" />
+    <Property Name="tuesday_afterhours_filename_override" Type="String" />
+    <Property Name="wednesday_afterhours_filename_override" Type="String" />
+    <Property Name="thursday_afterhours_filename_override" Type="String" />
+    <Property Name="friday_afterhours_filename_override" Type="String" />
+    <Property Name="saturday_afterhours_filename_override" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_campaign_hotkeys">
+    <Key>
+      <PropertyRef Name="status" />
+      <PropertyRef Name="hotkey" />
+    </Key>
+    <Property Name="status" Type="String" Nullable="false" />
+    <Property Name="hotkey" Type="String" Nullable="false" />
+    <Property Name="status_name" Type="String" />
+    <Property Name="selectable" Type="String" />
+    <Property Name="campaign_id" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_campaign_stats">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+    </Key>
+    <Property Name="campaign_id" Type="String" Nullable="false" />
+    <Property Name="update_time" Type="DateTimeOffset" Nullable="false" />
+    <Property Name="dialable_leads" Type="Int64" />
+    <Property Name="calls_today" Type="Int64" />
+    <Property Name="answers_today" Type="Int64" />
+    <Property Name="drops_today" Type="Int64" />
+    <Property Name="drops_today_pct" Type="String" />
+    <Property Name="drops_answers_today_pct" Type="String" />
+    <Property Name="calls_hour" Type="Int64" />
+    <Property Name="answers_hour" Type="Int64" />
+    <Property Name="drops_hour" Type="Int64" />
+    <Property Name="drops_hour_pct" Type="String" />
+    <Property Name="calls_halfhour" Type="Int64" />
+    <Property Name="answers_halfhour" Type="Int64" />
+    <Property Name="drops_halfhour" Type="Int64" />
+    <Property Name="drops_halfhour_pct" Type="String" />
+    <Property Name="calls_fivemin" Type="Int64" />
+    <Property Name="answers_fivemin" Type="Int64" />
+    <Property Name="drops_fivemin" Type="Int64" />
+    <Property Name="drops_fivemin_pct" Type="String" />
+    <Property Name="calls_onemin" Type="Int64" />
+    <Property Name="answers_onemin" Type="Int64" />
+    <Property Name="drops_onemin" Type="Int64" />
+    <Property Name="drops_onemin_pct" Type="String" />
+    <Property Name="differential_onemin" Type="String" />
+    <Property Name="agents_average_onemin" Type="String" />
+    <Property Name="balance_trunk_fill" Type="Int32" />
+    <Property Name="status_category_1" Type="String" />
+    <Property Name="status_category_count_1" Type="Int64" />
+    <Property Name="status_category_2" Type="String" />
+    <Property Name="status_category_count_2" Type="Int64" />
+    <Property Name="status_category_3" Type="String" />
+    <Property Name="status_category_count_3" Type="Int64" />
+    <Property Name="status_category_4" Type="String" />
+    <Property Name="status_category_count_4" Type="Int64" />
+    <Property Name="hold_sec_stat_one" Type="Int32" />
+    <Property Name="hold_sec_stat_two" Type="Int32" />
+    <Property Name="agent_non_pause_sec" Type="Int32" />
+    <Property Name="hold_sec_answer_calls" Type="Int32" />
+    <Property Name="hold_sec_drop_calls" Type="Int32" />
+    <Property Name="hold_sec_queue_calls" Type="Int32" />
+    <Property Name="agent_calls_today" Type="Int64" />
+    <Property Name="agent_wait_today" Type="Decimal" />
+    <Property Name="agent_custtalk_today" Type="Decimal" />
+    <Property Name="agent_acw_today" Type="Decimal" />
+    <Property Name="agent_pause_today" Type="Decimal" />
+  </EntityType>
+  <EntityType Name="vicidial_campaign_stats_debug">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+      <PropertyRef Name="server_ip" />
+      <PropertyRef Name="update_time" />
+    </Key>
+    <Property Name="campaign_id" Type="String" Nullable="false" />
+    <Property Name="server_ip" Type="String" Nullable="false" />
+    <Property Name="entry_time" Type="DateTime" />
+    <Property Name="update_time" Type="DateTimeOffset" Nullable="false" />
+    <Property Name="debug_output" Type="String" />
+    <Property Name="adapt_output" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_campaign_statuses">
+    <Key>
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="status" Type="String" Nullable="false" />
+    <Property Name="status_name" Type="String" />
+    <Property Name="selectable" Type="String" />
+    <Property Name="campaign_id" Type="String" />
+    <Property Name="human_answered" Type="String" />
+    <Property Name="category" Type="String" />
+    <Property Name="sale" Type="String" />
+    <Property Name="dnc" Type="String" />
+    <Property Name="customer_contact" Type="String" />
+    <Property Name="not_interested" Type="String" />
+    <Property Name="unworkable" Type="String" />
+    <Property Name="scheduled_callback" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_campaigns">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+    </Key>
+    <Property Name="campaign_id" Type="String" Nullable="false" />
+    <Property Name="campaign_name" Type="String" />
+    <Property Name="active" Type="String" />
+    <Property Name="dial_status_a" Type="String" />
+    <Property Name="dial_status_b" Type="String" />
+    <Property Name="dial_status_c" Type="String" />
+    <Property Name="dial_status_d" Type="String" />
+    <Property Name="dial_status_e" Type="String" />
+    <Property Name="lead_order" Type="String" />
+    <Property Name="park_ext" Type="String" />
+    <Property Name="park_file_name" Type="String" />
+    <Property Name="web_form_address" Type="String" />
+    <Property Name="allow_closers" Type="String" />
+    <Property Name="hopper_level" Type="Int64" />
+    <Property Name="auto_dial_level" Type="String" />
+    <Property Name="next_agent_call" Type="String" />
+    <Property Name="local_call_time" Type="String" />
+    <Property Name="voicemail_ext" Type="String" />
+    <Property Name="dial_timeout" Type="Byte" />
+    <Property Name="dial_prefix" Type="String" />
+    <Property Name="campaign_cid" Type="String" />
+    <Property Name="campaign_vdad_exten" Type="String" />
+    <Property Name="campaign_rec_exten" Type="String" />
+    <Property Name="campaign_recording" Type="String" />
+    <Property Name="campaign_rec_filename" Type="String" />
+    <Property Name="campaign_script" Type="String" />
+    <Property Name="get_call_launch" Type="String" />
+    <Property Name="am_message_exten" Type="String" />
+    <Property Name="amd_send_to_vmx" Type="String" />
+    <Property Name="xferconf_a_dtmf" Type="String" />
+    <Property Name="xferconf_a_number" Type="String" />
+    <Property Name="xferconf_b_dtmf" Type="String" />
+    <Property Name="xferconf_b_number" Type="String" />
+    <Property Name="alt_number_dialing" Type="String" />
+    <Property Name="scheduled_callbacks" Type="String" />
+    <Property Name="lead_filter_id" Type="String" />
+    <Property Name="drop_call_seconds" Type="SByte" />
+    <Property Name="drop_action" Type="String" />
+    <Property Name="safe_harbor_exten" Type="String" />
+    <Property Name="display_dialable_count" Type="String" />
+    <Property Name="wrapup_seconds" Type="Int32" />
+    <Property Name="wrapup_message" Type="String" />
+    <Property Name="closer_campaigns" Type="String" />
+    <Property Name="use_internal_dnc" Type="String" />
+    <Property Name="allcalls_delay" Type="Int32" />
+    <Property Name="omit_phone_code" Type="String" />
+    <Property Name="dial_method" Type="String" />
+    <Property Name="available_only_ratio_tally" Type="String" />
+    <Property Name="adaptive_dropped_percentage" Type="String" />
+    <Property Name="adaptive_maximum_level" Type="String" />
+    <Property Name="adaptive_latest_server_time" Type="String" />
+    <Property Name="adaptive_intensity" Type="String" />
+    <Property Name="adaptive_dl_diff_target" Type="Int16" />
+    <Property Name="concurrent_transfers" Type="String" />
+    <Property Name="auto_alt_dial" Type="String" />
+    <Property Name="auto_alt_dial_statuses" Type="String" />
+    <Property Name="agent_pause_codes_active" Type="String" />
+    <Property Name="campaign_description" Type="String" />
+    <Property Name="campaign_changedate" Type="DateTime" />
+    <Property Name="campaign_stats_refresh" Type="String" />
+    <Property Name="campaign_logindate" Type="DateTime" />
+    <Property Name="dial_statuses" Type="String" />
+    <Property Name="disable_alter_custdata" Type="String" />
+    <Property Name="no_hopper_leads_logins" Type="String" />
+    <Property Name="list_order_mix" Type="String" />
+    <Property Name="campaign_allow_inbound" Type="String" />
+    <Property Name="manual_dial_list_id" Type="Decimal" />
+    <Property Name="default_xfer_group" Type="String" />
+    <Property Name="xfer_groups" Type="String" />
+    <Property Name="queue_priority" Type="SByte" />
+    <Property Name="drop_inbound_group" Type="String" />
+    <Property Name="qc_enabled" Type="String" />
+    <Property Name="qc_statuses" Type="String" />
+    <Property Name="qc_lists" Type="String" />
+    <Property Name="qc_shift_id" Type="String" />
+    <Property Name="qc_get_record_launch" Type="String" />
+    <Property Name="qc_show_recording" Type="String" />
+    <Property Name="qc_web_form_address" Type="String" />
+    <Property Name="qc_script" Type="String" />
+    <Property Name="survey_first_audio_file" Type="String" />
+    <Property Name="survey_dtmf_digits" Type="String" />
+    <Property Name="survey_ni_digit" Type="String" />
+    <Property Name="survey_opt_in_audio_file" Type="String" />
+    <Property Name="survey_ni_audio_file" Type="String" />
+    <Property Name="survey_method" Type="String" />
+    <Property Name="survey_no_response_action" Type="String" />
+    <Property Name="survey_ni_status" Type="String" />
+    <Property Name="survey_response_digit_map" Type="String" />
+    <Property Name="survey_xfer_exten" Type="String" />
+    <Property Name="survey_camp_record_dir" Type="String" />
+    <Property Name="disable_alter_custphone" Type="String" />
+    <Property Name="display_queue_count" Type="String" />
+    <Property Name="manual_dial_filter" Type="String" />
+    <Property Name="agent_clipboard_copy" Type="String" />
+    <Property Name="agent_extended_alt_dial" Type="String" />
+    <Property Name="use_campaign_dnc" Type="String" />
+    <Property Name="three_way_call_cid" Type="String" />
+    <Property Name="three_way_dial_prefix" Type="String" />
+    <Property Name="web_form_target" Type="String" Nullable="false" />
+    <Property Name="vtiger_search_category" Type="String" />
+    <Property Name="vtiger_create_call_record" Type="String" />
+    <Property Name="vtiger_create_lead_record" Type="String" />
+    <Property Name="vtiger_screen_login" Type="String" />
+    <Property Name="cpd_amd_action" Type="String" />
+    <Property Name="agent_allow_group_alias" Type="String" />
+    <Property Name="default_group_alias" Type="String" />
+    <Property Name="vtiger_search_dead" Type="String" />
+    <Property Name="vtiger_status_call" Type="String" />
+    <Property Name="survey_third_digit" Type="String" />
+    <Property Name="survey_third_audio_file" Type="String" />
+    <Property Name="survey_third_status" Type="String" />
+    <Property Name="survey_third_exten" Type="String" />
+    <Property Name="survey_fourth_digit" Type="String" />
+    <Property Name="survey_fourth_audio_file" Type="String" />
+    <Property Name="survey_fourth_status" Type="String" />
+    <Property Name="survey_fourth_exten" Type="String" />
+    <Property Name="drop_lockout_time" Type="String" />
+    <Property Name="quick_transfer_button" Type="String" />
+    <Property Name="prepopulate_transfer_preset" Type="String" />
+    <Property Name="drop_rate_group" Type="String" />
+    <Property Name="view_calls_in_queue" Type="String" />
+    <Property Name="view_calls_in_queue_launch" Type="String" />
+    <Property Name="grab_calls_in_queue" Type="String" />
+    <Property Name="call_requeue_button" Type="String" />
+    <Property Name="pause_after_each_call" Type="String" />
+    <Property Name="no_hopper_dialing" Type="String" />
+    <Property Name="agent_dial_owner_only" Type="String" />
+    <Property Name="agent_display_dialable_leads" Type="String" />
+    <Property Name="web_form_address_two" Type="String" />
+    <Property Name="waitforsilence_options" Type="String" />
+    <Property Name="agent_select_territories" Type="String" />
+    <Property Name="campaign_calldate" Type="DateTime" />
+    <Property Name="crm_popup_login" Type="String" />
+    <Property Name="crm_login_address" Type="String" />
+    <Property Name="timer_action" Type="String" />
+    <Property Name="timer_action_message" Type="String" />
+    <Property Name="timer_action_seconds" Type="Int32" />
+    <Property Name="start_call_url" Type="String" />
+    <Property Name="dispo_call_url" Type="String" />
+    <Property Name="xferconf_c_number" Type="String" />
+    <Property Name="xferconf_d_number" Type="String" />
+    <Property Name="xferconf_e_number" Type="String" />
+    <Property Name="use_custom_cid" Type="String" />
+    <Property Name="scheduled_callbacks_alert" Type="String" />
+    <Property Name="queuemetrics_callstatus_override" Type="String" />
+    <Property Name="extension_appended_cidname" Type="String" />
+    <Property Name="scheduled_callbacks_count" Type="String" />
+    <Property Name="manual_dial_override" Type="String" />
+    <Property Name="blind_monitor_warning" Type="String" />
+    <Property Name="blind_monitor_message" Type="String" />
+    <Property Name="blind_monitor_filename" Type="String" />
+    <Property Name="inbound_queue_no_dial" Type="String" />
+    <Property Name="timer_action_destination" Type="String" />
+    <Property Name="enable_xfer_presets" Type="String" />
+    <Property Name="hide_xfer_number_to_dial" Type="String" />
+    <Property Name="manual_dial_prefix" Type="String" />
+    <Property Name="customer_3way_hangup_logging" Type="String" />
+    <Property Name="customer_3way_hangup_seconds" Type="Int32" />
+    <Property Name="customer_3way_hangup_action" Type="String" />
+    <Property Name="ivr_park_call" Type="String" />
+    <Property Name="ivr_park_call_agi" Type="String" />
+    <Property Name="manual_preview_dial" Type="String" />
+    <Property Name="realtime_agent_time_stats" Type="String" />
+    <Property Name="use_auto_hopper" Type="String" />
+    <Property Name="auto_hopper_multi" Type="String" />
+    <Property Name="auto_hopper_level" Type="Int32" />
+    <Property Name="auto_trim_hopper" Type="String" />
+    <Property Name="api_manual_dial" Type="String" />
+    <Property Name="manual_dial_call_time_check" Type="String" />
+    <Property Name="display_leads_count" Type="String" />
+    <Property Name="lead_order_randomize" Type="String" />
+    <Property Name="lead_order_secondary" Type="String" />
+    <Property Name="per_call_notes" Type="String" />
+    <Property Name="my_callback_option" Type="String" />
+    <Property Name="agent_lead_search" Type="String" />
+    <Property Name="agent_lead_search_method" Type="String" />
+    <Property Name="queuemetrics_phone_environment" Type="String" />
+    <Property Name="auto_pause_precall" Type="String" />
+    <Property Name="auto_pause_precall_code" Type="String" />
+    <Property Name="auto_resume_precall" Type="String" />
+    <Property Name="manual_dial_cid" Type="String" />
+    <Property Name="post_phone_time_diff_alert" Type="String" />
+    <Property Name="custom_3way_button_transfer" Type="String" />
+    <Property Name="available_only_tally_threshold" Type="String" />
+    <Property Name="available_only_tally_threshold_agents" Type="Int32" />
+    <Property Name="dial_level_threshold" Type="String" />
+    <Property Name="dial_level_threshold_agents" Type="Int32" />
+    <Property Name="safe_harbor_audio" Type="String" />
+    <Property Name="safe_harbor_menu_id" Type="String" />
+    <Property Name="survey_menu_id" Type="String" />
+    <Property Name="callback_days_limit" Type="Int16" />
+    <Property Name="dl_diff_target_method" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_inbound_groups">
+    <Key>
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="group_id" Type="String" Nullable="false" />
+    <Property Name="group_name" Type="String" />
+    <Property Name="group_color" Type="String" />
+    <Property Name="active" Type="String" />
+    <Property Name="web_form_address" Type="String" />
+    <Property Name="voicemail_ext" Type="String" />
+    <Property Name="next_agent_call" Type="String" />
+    <Property Name="fronter_display" Type="String" />
+    <Property Name="ingroup_script" Type="String" />
+    <Property Name="get_call_launch" Type="String" />
+    <Property Name="xferconf_a_dtmf" Type="String" />
+    <Property Name="xferconf_a_number" Type="String" />
+    <Property Name="xferconf_b_dtmf" Type="String" />
+    <Property Name="xferconf_b_number" Type="String" />
+    <Property Name="drop_call_seconds" Type="Int32" />
+    <Property Name="drop_action" Type="String" />
+    <Property Name="drop_exten" Type="String" />
+    <Property Name="call_time_id" Type="String" />
+    <Property Name="after_hours_action" Type="String" />
+    <Property Name="after_hours_message_filename" Type="String" />
+    <Property Name="after_hours_exten" Type="String" />
+    <Property Name="after_hours_voicemail" Type="String" />
+    <Property Name="welcome_message_filename" Type="String" />
+    <Property Name="moh_context" Type="String" />
+    <Property Name="onhold_prompt_filename" Type="String" />
+    <Property Name="prompt_interval" Type="Int32" />
+    <Property Name="agent_alert_exten" Type="String" />
+    <Property Name="agent_alert_delay" Type="Int32" />
+    <Property Name="default_xfer_group" Type="String" />
+    <Property Name="queue_priority" Type="SByte" />
+    <Property Name="drop_inbound_group" Type="String" />
+    <Property Name="ingroup_recording_override" Type="String" />
+    <Property Name="ingroup_rec_filename" Type="String" />
+    <Property Name="afterhours_xfer_group" Type="String" />
+    <Property Name="qc_enabled" Type="String" />
+    <Property Name="qc_statuses" Type="String" />
+    <Property Name="qc_shift_id" Type="String" />
+    <Property Name="qc_get_record_launch" Type="String" />
+    <Property Name="qc_show_recording" Type="String" />
+    <Property Name="qc_web_form_address" Type="String" />
+    <Property Name="qc_script" Type="String" />
+    <Property Name="play_place_in_line" Type="String" />
+    <Property Name="play_estimate_hold_time" Type="String" />
+    <Property Name="hold_time_option" Type="String" />
+    <Property Name="hold_time_option_seconds" Type="Int16" />
+    <Property Name="hold_time_option_exten" Type="String" />
+    <Property Name="hold_time_option_voicemail" Type="String" />
+    <Property Name="hold_time_option_xfer_group" Type="String" />
+    <Property Name="hold_time_option_callback_filename" Type="String" />
+    <Property Name="hold_time_option_callback_list_id" Type="Decimal" />
+    <Property Name="hold_recall_xfer_group" Type="String" />
+    <Property Name="no_delay_call_route" Type="String" />
+    <Property Name="play_welcome_message" Type="String" />
+    <Property Name="answer_sec_pct_rt_stat_one" Type="Int32" />
+    <Property Name="answer_sec_pct_rt_stat_two" Type="Int32" />
+    <Property Name="default_group_alias" Type="String" />
+    <Property Name="no_agent_no_queue" Type="String" />
+    <Property Name="no_agent_action" Type="String" />
+    <Property Name="no_agent_action_value" Type="String" />
+    <Property Name="web_form_address_two" Type="String" />
+    <Property Name="timer_action" Type="String" />
+    <Property Name="timer_action_message" Type="String" />
+    <Property Name="timer_action_seconds" Type="Int32" />
+    <Property Name="start_call_url" Type="String" />
+    <Property Name="dispo_call_url" Type="String" />
+    <Property Name="xferconf_c_number" Type="String" />
+    <Property Name="xferconf_d_number" Type="String" />
+    <Property Name="xferconf_e_number" Type="String" />
+    <Property Name="ignore_list_script_override" Type="String" />
+    <Property Name="extension_appended_cidname" Type="String" />
+    <Property Name="uniqueid_status_display" Type="String" />
+    <Property Name="uniqueid_status_prefix" Type="String" />
+    <Property Name="hold_time_option_minimum" Type="Int16" />
+    <Property Name="hold_time_option_press_filename" Type="String" />
+    <Property Name="hold_time_option_callmenu" Type="String" />
+    <Property Name="hold_time_option_no_block" Type="String" />
+    <Property Name="hold_time_option_prompt_seconds" Type="Int16" />
+    <Property Name="onhold_prompt_no_block" Type="String" />
+    <Property Name="onhold_prompt_seconds" Type="Int16" />
+    <Property Name="hold_time_second_option" Type="String" />
+    <Property Name="hold_time_third_option" Type="String" />
+    <Property Name="wait_hold_option_priority" Type="String" />
+    <Property Name="wait_time_option" Type="String" />
+    <Property Name="wait_time_second_option" Type="String" />
+    <Property Name="wait_time_third_option" Type="String" />
+    <Property Name="wait_time_option_seconds" Type="Int16" />
+    <Property Name="wait_time_option_exten" Type="String" />
+    <Property Name="wait_time_option_voicemail" Type="String" />
+    <Property Name="wait_time_option_xfer_group" Type="String" />
+    <Property Name="wait_time_option_callmenu" Type="String" />
+    <Property Name="wait_time_option_callback_filename" Type="String" />
+    <Property Name="wait_time_option_callback_list_id" Type="Decimal" />
+    <Property Name="wait_time_option_press_filename" Type="String" />
+    <Property Name="wait_time_option_no_block" Type="String" />
+    <Property Name="wait_time_option_prompt_seconds" Type="Int16" />
+    <Property Name="timer_action_destination" Type="String" />
+    <Property Name="calculate_estimated_hold_seconds" Type="Int32" />
+    <Property Name="add_lead_url" Type="String" />
+    <Property Name="eht_minimum_prompt_filename" Type="String" />
+    <Property Name="eht_minimum_prompt_no_block" Type="String" />
+    <Property Name="eht_minimum_prompt_seconds" Type="Int16" />
+    <Property Name="on_hook_ring_time" Type="Int16" />
+  </EntityType>
+  <EntityType Name="vicidial_lead_recycle">
+    <Key>
+      <PropertyRef Name="recycle_id" />
+    </Key>
+    <Property Name="recycle_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="campaign_id" Type="String" />
+    <Property Name="status" Type="String" Nullable="false" />
+    <Property Name="attempt_delay" Type="Int32" />
+    <Property Name="attempt_maximum" Type="Byte" />
+    <Property Name="active" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_log">
+    <Key>
+      <PropertyRef Name="uniqueid" />
+    </Key>
+    <Property Name="uniqueid" Type="String" Nullable="false" />
+    <Property Name="lead_id" Type="Int64" Nullable="false" />
+    <Property Name="list_id" Type="Decimal" />
+    <Property Name="campaign_id" Type="String" />
+    <Property Name="call_date" Type="DateTime" />
+    <Property Name="start_epoch" Type="Int64" />
+    <Property Name="end_epoch" Type="Int64" />
+    <Property Name="length_in_sec" Type="Int32" />
+    <Property Name="status" Type="String" />
+    <Property Name="phone_code" Type="String" />
+    <Property Name="phone_number" Type="String" />
+    <Property Name="user" Type="String" />
+    <Property Name="comments" Type="String" />
+    <Property Name="processed" Type="String" />
+    <Property Name="user_group" Type="String" />
+    <Property Name="term_reason" Type="String" />
+    <Property Name="alt_dial" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_pause_codes">
+    <Key>
+      <PropertyRef Name="pause_code" />
+    </Key>
+    <Property Name="pause_code" Type="String" Nullable="false" />
+    <Property Name="pause_code_name" Type="String" />
+    <Property Name="billable" Type="String" />
+    <Property Name="campaign_id" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_statuses">
+    <Key>
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="status" Type="String" Nullable="false" />
+    <Property Name="status_name" Type="String" />
+    <Property Name="selectable" Type="String" />
+    <Property Name="human_answered" Type="String" />
+    <Property Name="category" Type="String" />
+    <Property Name="sale" Type="String" />
+    <Property Name="dnc" Type="String" />
+    <Property Name="customer_contact" Type="String" />
+    <Property Name="not_interested" Type="String" />
+    <Property Name="unworkable" Type="String" />
+    <Property Name="scheduled_callback" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_user_groups">
+    <Key>
+      <PropertyRef Name="user_group" />
+      <PropertyRef Name="group_name" />
+    </Key>
+    <Property Name="user_group" Type="String" Nullable="false" />
+    <Property Name="group_name" Type="String" Nullable="false" />
+    <Property Name="allowed_campaigns" Type="String" />
+    <Property Name="qc_allowed_campaigns" Type="String" />
+    <Property Name="qc_allowed_inbound_groups" Type="String" />
+    <Property Name="group_shifts" Type="String" />
+    <Property Name="forced_timeclock_login" Type="String" />
+    <Property Name="shift_enforcement" Type="String" />
+    <Property Name="agent_status_viewable_groups" Type="String" />
+    <Property Name="agent_status_view_time" Type="String" />
+    <Property Name="agent_call_log_view" Type="String" />
+    <Property Name="agent_xfer_consultative" Type="String" />
+    <Property Name="agent_xfer_dial_override" Type="String" />
+    <Property Name="agent_xfer_vm_transfer" Type="String" />
+    <Property Name="agent_xfer_blind_transfer" Type="String" />
+    <Property Name="agent_xfer_dial_with_customer" Type="String" />
+    <Property Name="agent_xfer_park_customer_dial" Type="String" />
+    <Property Name="agent_fullscreen" Type="String" />
+    <Property Name="allowed_reports" Type="String" />
+    <Property Name="webphone_url_override" Type="String" />
+    <Property Name="webphone_systemkey_override" Type="String" />
+    <Property Name="webphone_dialpad_override" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user" Type="String" Nullable="false" />
+    <Property Name="pass" Type="String" Nullable="false" />
+    <Property Name="full_name" Type="String" />
+    <Property Name="user_level" Type="SByte" />
+    <Property Name="user_group" Type="String" />
+    <Property Name="phone_login" Type="String" />
+    <Property Name="phone_pass" Type="String" />
+    <Property Name="delete_users" Type="String" />
+    <Property Name="delete_user_groups" Type="String" />
+    <Property Name="delete_lists" Type="String" />
+    <Property Name="delete_campaigns" Type="String" />
+    <Property Name="delete_ingroups" Type="String" />
+    <Property Name="delete_remote_agents" Type="String" />
+    <Property Name="load_leads" Type="String" />
+    <Property Name="campaign_detail" Type="String" />
+    <Property Name="ast_admin_access" Type="String" />
+    <Property Name="ast_delete_phones" Type="String" />
+    <Property Name="delete_scripts" Type="String" />
+    <Property Name="modify_leads" Type="String" />
+    <Property Name="hotkeys_active" Type="String" />
+    <Property Name="change_agent_campaign" Type="String" />
+    <Property Name="agent_choose_ingroups" Type="String" />
+    <Property Name="closer_campaigns" Type="String" />
+    <Property Name="scheduled_callbacks" Type="String" />
+    <Property Name="agentonly_callbacks" Type="String" />
+    <Property Name="agentcall_manual" Type="String" />
+    <Property Name="vicidial_recording" Type="String" />
+    <Property Name="vicidial_transfers" Type="String" />
+    <Property Name="delete_filters" Type="String" />
+    <Property Name="alter_agent_interface_options" Type="String" />
+    <Property Name="closer_default_blended" Type="String" />
+    <Property Name="delete_call_times" Type="String" />
+    <Property Name="modify_call_times" Type="String" />
+    <Property Name="modify_users" Type="String" />
+    <Property Name="modify_campaigns" Type="String" />
+    <Property Name="modify_lists" Type="String" />
+    <Property Name="modify_scripts" Type="String" />
+    <Property Name="modify_filters" Type="String" />
+    <Property Name="modify_ingroups" Type="String" />
+    <Property Name="modify_usergroups" Type="String" />
+    <Property Name="modify_remoteagents" Type="String" />
+    <Property Name="modify_servers" Type="String" />
+    <Property Name="view_reports" Type="String" />
+    <Property Name="vicidial_recording_override" Type="String" />
+    <Property Name="alter_custdata_override" Type="String" />
+    <Property Name="qc_enabled" Type="String" />
+    <Property Name="qc_user_level" Type="Int32" />
+    <Property Name="qc_pass" Type="String" />
+    <Property Name="qc_finish" Type="String" />
+    <Property Name="qc_commit" Type="String" />
+    <Property Name="add_timeclock_log" Type="String" />
+    <Property Name="modify_timeclock_log" Type="String" />
+    <Property Name="delete_timeclock_log" Type="String" />
+    <Property Name="alter_custphone_override" Type="String" />
+    <Property Name="vdc_agent_api_access" Type="String" />
+    <Property Name="modify_inbound_dids" Type="String" />
+    <Property Name="delete_inbound_dids" Type="String" />
+    <Property Name="active" Type="String" />
+    <Property Name="alert_enabled" Type="String" />
+    <Property Name="download_lists" Type="String" />
+    <Property Name="agent_shift_enforcement_override" Type="String" />
+    <Property Name="manager_shift_enforcement_override" Type="String" />
+    <Property Name="shift_override_flag" Type="String" />
+    <Property Name="export_reports" Type="String" />
+    <Property Name="delete_from_dnc" Type="String" />
+    <Property Name="email" Type="String" />
+    <Property Name="user_code" Type="String" />
+    <Property Name="territory" Type="String" />
+    <Property Name="allow_alerts" Type="String" />
+    <Property Name="agent_choose_territories" Type="String" />
+    <Property Name="custom_one" Type="String" />
+    <Property Name="custom_two" Type="String" />
+    <Property Name="custom_three" Type="String" />
+    <Property Name="custom_four" Type="String" />
+    <Property Name="custom_five" Type="String" />
+    <Property Name="voicemail_id" Type="String" />
+    <Property Name="agent_call_log_view_override" Type="String" />
+    <Property Name="callcard_admin" Type="String" />
+    <Property Name="agent_choose_blended" Type="String" />
+    <Property Name="realtime_block_user_info" Type="String" />
+    <Property Name="custom_fields_modify" Type="String" />
+    <Property Name="force_change_password" Type="String" />
+    <Property Name="agent_lead_search_override" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_xfer_presets">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+      <PropertyRef Name="preset_name" />
+      <PropertyRef Name="preset_number" />
+    </Key>
+    <Property Name="campaign_id" Type="String" Nullable="false" />
+    <Property Name="preset_name" Type="String" Nullable="false" />
+    <Property Name="preset_number" Type="String" Nullable="false" />
+    <Property Name="preset_dtmf" Type="String" />
+    <Property Name="preset_hide_number" Type="String" />
+  </EntityType>
+  <EntityType Name="vicidial_xfer_stats">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+      <PropertyRef Name="preset_name" />
+    </Key>
+    <Property Name="campaign_id" Type="String" Nullable="false" />
+    <Property Name="preset_name" Type="String" Nullable="false" />
+    <Property Name="xfer_count" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="CallDistributionStrategy">
+    <Property Type="String" Name="FriendlyName" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DialMethod">
+    <Property Type="String" Name="FriendlyName" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" />
+  </ComplexType>
+</Schema>

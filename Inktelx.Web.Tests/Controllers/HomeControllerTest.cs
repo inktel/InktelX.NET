@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Inktelx.Web;
-using Inktelx.Web.Controllers;
+using InktelX.Web;
+using InktelX.Web.Controllers;
 
-namespace Inktelx.Web.Tests.Controllers
+namespace InktelX.Web.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

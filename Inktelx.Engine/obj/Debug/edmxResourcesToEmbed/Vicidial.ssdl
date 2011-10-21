@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vicidialModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="vicidialModelStoreContainer">
+    <EntitySet Name="vicidial_admin_log" EntityType="vicidialModel.Store.vicidial_admin_log" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_call_times" EntityType="vicidialModel.Store.vicidial_call_times" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_campaign_hotkeys" EntityType="vicidialModel.Store.vicidial_campaign_hotkeys" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_campaign_hotkeys">
+      <DefiningQuery>SELECT
+      `vicidial_campaign_hotkeys`.`status`, 
+      `vicidial_campaign_hotkeys`.`hotkey`, 
+      `vicidial_campaign_hotkeys`.`status_name`, 
+      `vicidial_campaign_hotkeys`.`selectable`, 
+      `vicidial_campaign_hotkeys`.`campaign_id`
+      FROM `vicidial_campaign_hotkeys` AS `vicidial_campaign_hotkeys`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vicidial_campaign_stats" EntityType="vicidialModel.Store.vicidial_campaign_stats" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_campaign_stats_debug" EntityType="vicidialModel.Store.vicidial_campaign_stats_debug" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_campaign_stats_debug">
+      <DefiningQuery>SELECT
+      `vicidial_campaign_stats_debug`.`campaign_id`, 
+      `vicidial_campaign_stats_debug`.`server_ip`, 
+      `vicidial_campaign_stats_debug`.`entry_time`, 
+      `vicidial_campaign_stats_debug`.`update_time`, 
+      `vicidial_campaign_stats_debug`.`debug_output`, 
+      `vicidial_campaign_stats_debug`.`adapt_output`
+      FROM `vicidial_campaign_stats_debug` AS `vicidial_campaign_stats_debug`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vicidial_campaign_statuses" EntityType="vicidialModel.Store.vicidial_campaign_statuses" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_campaign_statuses">
+      <DefiningQuery>SELECT
+      `vicidial_campaign_statuses`.`status`, 
+      `vicidial_campaign_statuses`.`status_name`, 
+      `vicidial_campaign_statuses`.`selectable`, 
+      `vicidial_campaign_statuses`.`campaign_id`, 
+      `vicidial_campaign_statuses`.`human_answered`, 
+      `vicidial_campaign_statuses`.`category`, 
+      `vicidial_campaign_statuses`.`sale`, 
+      `vicidial_campaign_statuses`.`dnc`, 
+      `vicidial_campaign_statuses`.`customer_contact`, 
+      `vicidial_campaign_statuses`.`not_interested`, 
+      `vicidial_campaign_statuses`.`unworkable`, 
+      `vicidial_campaign_statuses`.`scheduled_callback`
+      FROM `vicidial_campaign_statuses` AS `vicidial_campaign_statuses`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vicidial_campaigns" EntityType="vicidialModel.Store.vicidial_campaigns" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_inbound_groups" EntityType="vicidialModel.Store.vicidial_inbound_groups" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_lead_recycle" EntityType="vicidialModel.Store.vicidial_lead_recycle" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_log" EntityType="vicidialModel.Store.vicidial_log" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_pause_codes" EntityType="vicidialModel.Store.vicidial_pause_codes" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_pause_codes">
+      <DefiningQuery>SELECT
+      `vicidial_pause_codes`.`pause_code`, 
+      `vicidial_pause_codes`.`pause_code_name`, 
+      `vicidial_pause_codes`.`billable`, 
+      `vicidial_pause_codes`.`campaign_id`
+      FROM `vicidial_pause_codes` AS `vicidial_pause_codes`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vicidial_statuses" EntityType="vicidialModel.Store.vicidial_statuses" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_user_groups" EntityType="vicidialModel.Store.vicidial_user_groups" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_user_groups">
+      <DefiningQuery>SELECT
+      `vicidial_user_groups`.`user_group`, 
+      `vicidial_user_groups`.`group_name`, 
+      `vicidial_user_groups`.`allowed_campaigns`, 
+      `vicidial_user_groups`.`qc_allowed_campaigns`, 
+      `vicidial_user_groups`.`qc_allowed_inbound_groups`, 
+      `vicidial_user_groups`.`group_shifts`, 
+      `vicidial_user_groups`.`forced_timeclock_login`, 
+      `vicidial_user_groups`.`shift_enforcement`, 
+      `vicidial_user_groups`.`agent_status_viewable_groups`, 
+      `vicidial_user_groups`.`agent_status_view_time`, 
+      `vicidial_user_groups`.`agent_call_log_view`, 
+      `vicidial_user_groups`.`agent_xfer_consultative`, 
+      `vicidial_user_groups`.`agent_xfer_dial_override`, 
+      `vicidial_user_groups`.`agent_xfer_vm_transfer`, 
+      `vicidial_user_groups`.`agent_xfer_blind_transfer`, 
+      `vicidial_user_groups`.`agent_xfer_dial_with_customer`, 
+      `vicidial_user_groups`.`agent_xfer_park_customer_dial`, 
+      `vicidial_user_groups`.`agent_fullscreen`, 
+      `vicidial_user_groups`.`allowed_reports`, 
+      `vicidial_user_groups`.`webphone_url_override`, 
+      `vicidial_user_groups`.`webphone_systemkey_override`, 
+      `vicidial_user_groups`.`webphone_dialpad_override`
+      FROM `vicidial_user_groups` AS `vicidial_user_groups`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vicidial_users" EntityType="vicidialModel.Store.vicidial_users" store:Type="Tables" Schema="asterisk" />
+    <EntitySet Name="vicidial_xfer_presets" EntityType="vicidialModel.Store.vicidial_xfer_presets" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_xfer_presets">
+      <DefiningQuery>SELECT
+      `vicidial_xfer_presets`.`campaign_id`, 
+      `vicidial_xfer_presets`.`preset_name`, 
+      `vicidial_xfer_presets`.`preset_number`, 
+      `vicidial_xfer_presets`.`preset_dtmf`, 
+      `vicidial_xfer_presets`.`preset_hide_number`
+      FROM `vicidial_xfer_presets` AS `vicidial_xfer_presets`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vicidial_xfer_stats" EntityType="vicidialModel.Store.vicidial_xfer_stats" store:Type="Tables" store:Schema="asterisk" store:Name="vicidial_xfer_stats">
+      <DefiningQuery>SELECT
+      `vicidial_xfer_stats`.`campaign_id`, 
+      `vicidial_xfer_stats`.`preset_name`, 
+      `vicidial_xfer_stats`.`xfer_count`
+      FROM `vicidial_xfer_stats` AS `vicidial_xfer_stats`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="vicidial_admin_log">
+    <Key>
+      <PropertyRef Name="admin_log_id" />
+    </Key>
+    <Property Name="admin_log_id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="event_date" Type="datetime" Nullable="false" />
+    <Property Name="user" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ip_address" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="event_section" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="event_type" Type="enum" />
+    <Property Name="record_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="event_code" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="event_sql" Type="text" />
+    <Property Name="event_notes" Type="text" />
+  </EntityType>
+  <EntityType Name="vicidial_call_times">
+    <Key>
+      <PropertyRef Name="call_time_id" />
+    </Key>
+    <Property Name="call_time_id" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="call_time_name" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="call_time_comments" Type="varchar" MaxLength="255" />
+    <Property Name="ct_default_start" Type="usmallint" Nullable="false" />
+    <Property Name="ct_default_stop" Type="usmallint" Nullable="false" />
+    <Property Name="ct_sunday_start" Type="usmallint" />
+    <Property Name="ct_sunday_stop" Type="usmallint" />
+    <Property Name="ct_monday_start" Type="usmallint" />
+    <Property Name="ct_monday_stop" Type="usmallint" />
+    <Property Name="ct_tuesday_start" Type="usmallint" />
+    <Property Name="ct_tuesday_stop" Type="usmallint" />
+    <Property Name="ct_wednesday_start" Type="usmallint" />
+    <Property Name="ct_wednesday_stop" Type="usmallint" />
+    <Property Name="ct_thursday_start" Type="usmallint" />
+    <Property Name="ct_thursday_stop" Type="usmallint" />
+    <Property Name="ct_friday_start" Type="usmallint" />
+    <Property Name="ct_friday_stop" Type="usmallint" />
+    <Property Name="ct_saturday_start" Type="usmallint" />
+    <Property Name="ct_saturday_stop" Type="usmallint" />
+    <Property Name="ct_state_call_times" Type="text" />
+    <Property Name="default_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="sunday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="monday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="tuesday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="wednesday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="thursday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="friday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+    <Property Name="saturday_afterhours_filename_override" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_campaign_hotkeys' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_campaign_hotkeys">
+    <Key>
+      <PropertyRef Name="status" />
+      <PropertyRef Name="hotkey" />
+    </Key>
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="hotkey" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="status_name" Type="varchar" MaxLength="30" />
+    <Property Name="selectable" Type="enum" />
+    <Property Name="campaign_id" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="vicidial_campaign_stats">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+    </Key>
+    <Property Name="campaign_id" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="update_time" Type="timestamp" Nullable="false" Precision="0" />
+    <Property Name="dialable_leads" Type="uint" />
+    <Property Name="calls_today" Type="uint" />
+    <Property Name="answers_today" Type="uint" />
+    <Property Name="drops_today" Type="uint" />
+    <Property Name="drops_today_pct" Type="varchar" MaxLength="6" />
+    <Property Name="drops_answers_today_pct" Type="varchar" MaxLength="6" />
+    <Property Name="calls_hour" Type="uint" />
+    <Property Name="answers_hour" Type="uint" />
+    <Property Name="drops_hour" Type="uint" />
+    <Property Name="drops_hour_pct" Type="varchar" MaxLength="6" />
+    <Property Name="calls_halfhour" Type="uint" />
+    <Property Name="answers_halfhour" Type="uint" />
+    <Property Name="drops_halfhour" Type="uint" />
+    <Property Name="drops_halfhour_pct" Type="varchar" MaxLength="6" />
+    <Property Name="calls_fivemin" Type="uint" />
+    <Property Name="answers_fivemin" Type="uint" />
+    <Property Name="drops_fivemin" Type="uint" />
+    <Property Name="drops_fivemin_pct" Type="varchar" MaxLength="6" />
+    <Property Name="calls_onemin" Type="uint" />
+    <Property Name="answers_onemin" Type="uint" />
+    <Property Name="drops_onemin" Type="uint" />
+    <Property Name="drops_onemin_pct" Type="varchar" MaxLength="6" />
+    <Property Name="differential_onemin" Type="varchar" MaxLength="20" />
+    <Property Name="agents_average_onemin" Type="varchar" MaxLength="20" />
+    <Property Name="balance_trunk_fill" Type="usmallint" />
+    <Property Name="status_category_1" Type="varchar" MaxLength="20" />
+    <Property Name="status_category_count_1" Type="uint" />
+    <Property Name="status_category_2" Type="varchar" MaxLength="20" />
+    <Property Name="status_category_count_2" Type="uint" />
+    <Property Name="status_category_3" Type="varchar" MaxLength="20" />
+    <Property Name="status_category_count_3" Type="uint" />
+    <Property Name="status_category_4" Type="varchar" MaxLength="20" />
+    <Property Name="status_category_count_4" Type="uint" />
+    <Property Name="hold_sec_stat_one" Type="umediumint" />
+    <Property Name="hold_sec_stat_two" Type="umediumint" />
+    <Property Name="agent_non_pause_sec" Type="umediumint" />
+    <Property Name="hold_sec_answer_calls" Type="umediumint" />
+    <Property Name="hold_sec_drop_calls" Type="umediumint" />
+    <Property Name="hold_sec_queue_calls" Type="umediumint" />
+    <Property Name="agent_calls_today" Type="uint" />
+    <Property Name="agent_wait_today" Type="ubigint" />
+    <Property Name="agent_custtalk_today" Type="ubigint" />
+    <Property Name="agent_acw_today" Type="ubigint" />
+    <Property Name="agent_pause_today" Type="ubigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_campaign_stats_debug' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_campaign_stats_debug">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+      <PropertyRef Name="server_ip" />
+      <PropertyRef Name="update_time" />
+    </Key>
+    <Property Name="campaign_id" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="server_ip" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="entry_time" Type="datetime" />
+    <Property Name="update_time" Type="timestamp" Nullable="false" Precision="0" />
+    <Property Name="debug_output" Type="text" />
+    <Property Name="adapt_output" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_campaign_statuses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_campaign_statuses">
+    <Key>
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="status_name" Type="varchar" MaxLength="30" />
+    <Property Name="selectable" Type="enum" />
+    <Property Name="campaign_id" Type="varchar" MaxLength="8" />
+    <Property Name="human_answered" Type="enum" />
+    <Property Name="category" Type="varchar" MaxLength="20" />
+    <Property Name="sale" Type="enum" />
+    <Property Name="dnc" Type="enum" />
+    <Property Name="customer_contact" Type="enum" />
+    <Property Name="not_interested" Type="enum" />
+    <Property Name="unworkable" Type="enum" />
+    <Property Name="scheduled_callback" Type="enum" />
+  </EntityType>
+  <EntityType Name="vicidial_campaigns">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+    </Key>
+    <Property Name="campaign_id" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="campaign_name" Type="varchar" MaxLength="40" />
+    <Property Name="active" Type="enum" />
+    <Property Name="dial_status_a" Type="varchar" MaxLength="6" />
+    <Property Name="dial_status_b" Type="varchar" MaxLength="6" />
+    <Property Name="dial_status_c" Type="varchar" MaxLength="6" />
+    <Property Name="dial_status_d" Type="varchar" MaxLength="6" />
+    <Property Name="dial_status_e" Type="varchar" MaxLength="6" />
+    <Property Name="lead_order" Type="varchar" MaxLength="30" />
+    <Property Name="park_ext" Type="varchar" MaxLength="10" />
+    <Property Name="park_file_name" Type="varchar" MaxLength="100" />
+    <Property Name="web_form_address" Type="text" />
+    <Property Name="allow_closers" Type="enum" />
+    <Property Name="hopper_level" Type="uint" />
+    <Property Name="auto_dial_level" Type="varchar" MaxLength="6" />
+    <Property Name="next_agent_call" Type="enum" />
+    <Property Name="local_call_time" Type="varchar" MaxLength="10" />
+    <Property Name="voicemail_ext" Type="varchar" MaxLength="10" />
+    <Property Name="dial_timeout" Type="utinyint" />
+    <Property Name="dial_prefix" Type="varchar" MaxLength="20" />
+    <Property Name="campaign_cid" Type="varchar" MaxLength="20" />
+    <Property Name="campaign_vdad_exten" Type="varchar" MaxLength="20" />
+    <Property Name="campaign_rec_exten" Type="varchar" MaxLength="20" />
+    <Property Name="campaign_recording" Type="enum" />
+    <Property Name="campaign_rec_filename" Type="varchar" MaxLength="50" />
+    <Property Name="campaign_script" Type="varchar" MaxLength="10" />
+    <Property Name="get_call_launch" Type="enum" />
+    <Property Name="am_message_exten" Type="varchar" MaxLength="100" />
+    <Property Name="amd_send_to_vmx" Type="enum" />
+    <Property Name="xferconf_a_dtmf" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_a_number" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_b_dtmf" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_b_number" Type="varchar" MaxLength="50" />
+    <Property Name="alt_number_dialing" Type="enum" />
+    <Property Name="scheduled_callbacks" Type="enum" />
+    <Property Name="lead_filter_id" Type="varchar" MaxLength="10" />
+    <Property Name="drop_call_seconds" Type="tinyint" />
+    <Property Name="drop_action" Type="enum" />
+    <Property Name="safe_harbor_exten" Type="varchar" MaxLength="20" />
+    <Property Name="display_dialable_count" Type="enum" />
+    <Property Name="wrapup_seconds" Type="usmallint" />
+    <Property Name="wrapup_message" Type="varchar" MaxLength="255" />
+    <Property Name="closer_campaigns" Type="text" />
+    <Property Name="use_internal_dnc" Type="enum" />
+    <Property Name="allcalls_delay" Type="usmallint" />
+    <Property Name="omit_phone_code" Type="enum" />
+    <Property Name="dial_method" Type="enum" />
+    <Property Name="available_only_ratio_tally" Type="enum" />
+    <Property Name="adaptive_dropped_percentage" Type="varchar" MaxLength="4" />
+    <Property Name="adaptive_maximum_level" Type="varchar" MaxLength="6" />
+    <Property Name="adaptive_latest_server_time" Type="varchar" MaxLength="4" />
+    <Property Name="adaptive_intensity" Type="varchar" MaxLength="6" />
+    <Property Name="adaptive_dl_diff_target" Type="smallint" />
+    <Property Name="concurrent_transfers" Type="enum" />
+    <Property Name="auto_alt_dial" Type="enum" />
+    <Property Name="auto_alt_dial_statuses" Type="varchar" MaxLength="255" />
+    <Property Name="agent_pause_codes_active" Type="enum" />
+    <Property Name="campaign_description" Type="varchar" MaxLength="255" />
+    <Property Name="campaign_changedate" Type="datetime" />
+    <Property Name="campaign_stats_refresh" Type="enum" />
+    <Property Name="campaign_logindate" Type="datetime" />
+    <Property Name="dial_statuses" Type="varchar" MaxLength="255" />
+    <Property Name="disable_alter_custdata" Type="enum" />
+    <Property Name="no_hopper_leads_logins" Type="enum" />
+    <Property Name="list_order_mix" Type="varchar" MaxLength="20" />
+    <Property Name="campaign_allow_inbound" Type="enum" />
+    <Property Name="manual_dial_list_id" Type="ubigint" />
+    <Property Name="default_xfer_group" Type="varchar" MaxLength="20" />
+    <Property Name="xfer_groups" Type="text" />
+    <Property Name="queue_priority" Type="tinyint" />
+    <Property Name="drop_inbound_group" Type="varchar" MaxLength="20" />
+    <Property Name="qc_enabled" Type="enum" />
+    <Property Name="qc_statuses" Type="text" />
+    <Property Name="qc_lists" Type="text" />
+    <Property Name="qc_shift_id" Type="varchar" MaxLength="20" />
+    <Property Name="qc_get_record_launch" Type="enum" />
+    <Property Name="qc_show_recording" Type="enum" />
+    <Property Name="qc_web_form_address" Type="varchar" MaxLength="255" />
+    <Property Name="qc_script" Type="varchar" MaxLength="10" />
+    <Property Name="survey_first_audio_file" Type="varchar" MaxLength="50" />
+    <Property Name="survey_dtmf_digits" Type="varchar" MaxLength="16" />
+    <Property Name="survey_ni_digit" Type="varchar" MaxLength="1" />
+    <Property Name="survey_opt_in_audio_file" Type="varchar" MaxLength="50" />
+    <Property Name="survey_ni_audio_file" Type="varchar" MaxLength="50" />
+    <Property Name="survey_method" Type="enum" />
+    <Property Name="survey_no_response_action" Type="enum" />
+    <Property Name="survey_ni_status" Type="varchar" MaxLength="6" />
+    <Property Name="survey_response_digit_map" Type="varchar" MaxLength="255" />
+    <Property Name="survey_xfer_exten" Type="varchar" MaxLength="20" />
+    <Property Name="survey_camp_record_dir" Type="varchar" MaxLength="255" />
+    <Property Name="disable_alter_custphone" Type="enum" />
+    <Property Name="display_queue_count" Type="enum" />
+    <Property Name="manual_dial_filter" Type="varchar" MaxLength="50" />
+    <Property Name="agent_clipboard_copy" Type="varchar" MaxLength="50" />
+    <Property Name="agent_extended_alt_dial" Type="enum" />
+    <Property Name="use_campaign_dnc" Type="enum" />
+    <Property Name="three_way_call_cid" Type="enum" />
+    <Property Name="three_way_dial_prefix" Type="varchar" MaxLength="20" />
+    <Property Name="web_form_target" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="vtiger_search_category" Type="varchar" MaxLength="100" />
+    <Property Name="vtiger_create_call_record" Type="enum" />
+    <Property Name="vtiger_create_lead_record" Type="enum" />
+    <Property Name="vtiger_screen_login" Type="enum" />
+    <Property Name="cpd_amd_action" Type="enum" />
+    <Property Name="agent_allow_group_alias" Type="enum" />
+    <Property Name="default_group_alias" Type="varchar" MaxLength="30" />
+    <Property Name="vtiger_search_dead" Type="enum" />
+    <Property Name="vtiger_status_call" Type="enum" />
+    <Property Name="survey_third_digit" Type="varchar" MaxLength="1" />
+    <Property Name="survey_third_audio_file" Type="varchar" MaxLength="50" />
+    <Property Name="survey_third_status" Type="varchar" MaxLength="6" />
+    <Property Name="survey_third_exten" Type="varchar" MaxLength="20" />
+    <Property Name="survey_fourth_digit" Type="varchar" MaxLength="1" />
+    <Property Name="survey_fourth_audio_file" Type="varchar" MaxLength="50" />
+    <Property Name="survey_fourth_status" Type="varchar" MaxLength="6" />
+    <Property Name="survey_fourth_exten" Type="varchar" MaxLength="20" />
+    <Property Name="drop_lockout_time" Type="varchar" MaxLength="6" />
+    <Property Name="quick_transfer_button" Type="varchar" MaxLength="20" />
+    <Property Name="prepopulate_transfer_preset" Type="enum" />
+    <Property Name="drop_rate_group" Type="varchar" MaxLength="20" />
+    <Property Name="view_calls_in_queue" Type="enum" />
+    <Property Name="view_calls_in_queue_launch" Type="enum" />
+    <Property Name="grab_calls_in_queue" Type="enum" />
+    <Property Name="call_requeue_button" Type="enum" />
+    <Property Name="pause_after_each_call" Type="enum" />
+    <Property Name="no_hopper_dialing" Type="enum" />
+    <Property Name="agent_dial_owner_only" Type="enum" />
+    <Property Name="agent_display_dialable_leads" Type="enum" />
+    <Property Name="web_form_address_two" Type="text" />
+    <Property Name="waitforsilence_options" Type="varchar" MaxLength="25" />
+    <Property Name="agent_select_territories" Type="enum" />
+    <Property Name="campaign_calldate" Type="datetime" />
+    <Property Name="crm_popup_login" Type="enum" />
+    <Property Name="crm_login_address" Type="text" />
+    <Property Name="timer_action" Type="enum" />
+    <Property Name="timer_action_message" Type="varchar" MaxLength="255" />
+    <Property Name="timer_action_seconds" Type="mediumint" />
+    <Property Name="start_call_url" Type="text" />
+    <Property Name="dispo_call_url" Type="text" />
+    <Property Name="xferconf_c_number" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_d_number" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_e_number" Type="varchar" MaxLength="50" />
+    <Property Name="use_custom_cid" Type="enum" />
+    <Property Name="scheduled_callbacks_alert" Type="enum" />
+    <Property Name="queuemetrics_callstatus_override" Type="enum" />
+    <Property Name="extension_appended_cidname" Type="enum" />
+    <Property Name="scheduled_callbacks_count" Type="enum" />
+    <Property Name="manual_dial_override" Type="enum" />
+    <Property Name="blind_monitor_warning" Type="enum" />
+    <Property Name="blind_monitor_message" Type="varchar" MaxLength="255" />
+    <Property Name="blind_monitor_filename" Type="varchar" MaxLength="100" />
+    <Property Name="inbound_queue_no_dial" Type="enum" />
+    <Property Name="timer_action_destination" Type="varchar" MaxLength="30" />
+    <Property Name="enable_xfer_presets" Type="enum" />
+    <Property Name="hide_xfer_number_to_dial" Type="enum" />
+    <Property Name="manual_dial_prefix" Type="varchar" MaxLength="20" />
+    <Property Name="customer_3way_hangup_logging" Type="enum" />
+    <Property Name="customer_3way_hangup_seconds" Type="usmallint" />
+    <Property Name="customer_3way_hangup_action" Type="enum" />
+    <Property Name="ivr_park_call" Type="enum" />
+    <Property Name="ivr_park_call_agi" Type="text" />
+    <Property Name="manual_preview_dial" Type="enum" />
+    <Property Name="realtime_agent_time_stats" Type="enum" />
+    <Property Name="use_auto_hopper" Type="enum" />
+    <Property Name="auto_hopper_multi" Type="varchar" MaxLength="6" />
+    <Property Name="auto_hopper_level" Type="umediumint" />
+    <Property Name="auto_trim_hopper" Type="enum" />
+    <Property Name="api_manual_dial" Type="enum" />
+    <Property Name="manual_dial_call_time_check" Type="enum" />
+    <Property Name="display_leads_count" Type="enum" />
+    <Property Name="lead_order_randomize" Type="enum" />
+    <Property Name="lead_order_secondary" Type="enum" />
+    <Property Name="per_call_notes" Type="enum" />
+    <Property Name="my_callback_option" Type="enum" />
+    <Property Name="agent_lead_search" Type="enum" />
+    <Property Name="agent_lead_search_method" Type="varchar" MaxLength="30" />
+    <Property Name="queuemetrics_phone_environment" Type="varchar" MaxLength="20" />
+    <Property Name="auto_pause_precall" Type="enum" />
+    <Property Name="auto_pause_precall_code" Type="varchar" MaxLength="6" />
+    <Property Name="auto_resume_precall" Type="enum" />
+    <Property Name="manual_dial_cid" Type="enum" />
+    <Property Name="post_phone_time_diff_alert" Type="varchar" MaxLength="30" />
+    <Property Name="custom_3way_button_transfer" Type="varchar" MaxLength="30" />
+    <Property Name="available_only_tally_threshold" Type="enum" />
+    <Property Name="available_only_tally_threshold_agents" Type="usmallint" />
+    <Property Name="dial_level_threshold" Type="enum" />
+    <Property Name="dial_level_threshold_agents" Type="usmallint" />
+    <Property Name="safe_harbor_audio" Type="varchar" MaxLength="100" />
+    <Property Name="safe_harbor_menu_id" Type="varchar" MaxLength="50" />
+    <Property Name="survey_menu_id" Type="varchar" MaxLength="50" />
+    <Property Name="callback_days_limit" Type="smallint" />
+    <Property Name="dl_diff_target_method" Type="enum" />
+  </EntityType>
+  <EntityType Name="vicidial_inbound_groups">
+    <Key>
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="group_id" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="group_name" Type="varchar" MaxLength="30" />
+    <Property Name="group_color" Type="varchar" MaxLength="7" />
+    <Property Name="active" Type="enum" />
+    <Property Name="web_form_address" Type="text" />
+    <Property Name="voicemail_ext" Type="varchar" MaxLength="10" />
+    <Property Name="next_agent_call" Type="enum" />
+    <Property Name="fronter_display" Type="enum" />
+    <Property Name="ingroup_script" Type="varchar" MaxLength="10" />
+    <Property Name="get_call_launch" Type="enum" />
+    <Property Name="xferconf_a_dtmf" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_a_number" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_b_dtmf" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_b_number" Type="varchar" MaxLength="50" />
+    <Property Name="drop_call_seconds" Type="usmallint" />
+    <Property Name="drop_action" Type="enum" />
+    <Property Name="drop_exten" Type="varchar" MaxLength="20" />
+    <Property Name="call_time_id" Type="varchar" MaxLength="20" />
+    <Property Name="after_hours_action" Type="enum" />
+    <Property Name="after_hours_message_filename" Type="varchar" MaxLength="255" />
+    <Property Name="after_hours_exten" Type="varchar" MaxLength="20" />
+    <Property Name="after_hours_voicemail" Type="varchar" MaxLength="20" />
+    <Property Name="welcome_message_filename" Type="varchar" MaxLength="255" />
+    <Property Name="moh_context" Type="varchar" MaxLength="50" />
+    <Property Name="onhold_prompt_filename" Type="varchar" MaxLength="255" />
+    <Property Name="prompt_interval" Type="usmallint" />
+    <Property Name="agent_alert_exten" Type="varchar" MaxLength="100" />
+    <Property Name="agent_alert_delay" Type="int" />
+    <Property Name="default_xfer_group" Type="varchar" MaxLength="20" />
+    <Property Name="queue_priority" Type="tinyint" />
+    <Property Name="drop_inbound_group" Type="varchar" MaxLength="20" />
+    <Property Name="ingroup_recording_override" Type="enum" />
+    <Property Name="ingroup_rec_filename" Type="varchar" MaxLength="50" />
+    <Property Name="afterhours_xfer_group" Type="varchar" MaxLength="20" />
+    <Property Name="qc_enabled" Type="enum" />
+    <Property Name="qc_statuses" Type="text" />
+    <Property Name="qc_shift_id" Type="varchar" MaxLength="20" />
+    <Property Name="qc_get_record_launch" Type="enum" />
+    <Property Name="qc_show_recording" Type="enum" />
+    <Property Name="qc_web_form_address" Type="varchar" MaxLength="255" />
+    <Property Name="qc_script" Type="varchar" MaxLength="10" />
+    <Property Name="play_place_in_line" Type="enum" />
+    <Property Name="play_estimate_hold_time" Type="enum" />
+    <Property Name="hold_time_option" Type="varchar" MaxLength="30" />
+    <Property Name="hold_time_option_seconds" Type="smallint" />
+    <Property Name="hold_time_option_exten" Type="varchar" MaxLength="20" />
+    <Property Name="hold_time_option_voicemail" Type="varchar" MaxLength="20" />
+    <Property Name="hold_time_option_xfer_group" Type="varchar" MaxLength="20" />
+    <Property Name="hold_time_option_callback_filename" Type="varchar" MaxLength="255" />
+    <Property Name="hold_time_option_callback_list_id" Type="ubigint" />
+    <Property Name="hold_recall_xfer_group" Type="varchar" MaxLength="20" />
+    <Property Name="no_delay_call_route" Type="enum" />
+    <Property Name="play_welcome_message" Type="enum" />
+    <Property Name="answer_sec_pct_rt_stat_one" Type="usmallint" />
+    <Property Name="answer_sec_pct_rt_stat_two" Type="usmallint" />
+    <Property Name="default_group_alias" Type="varchar" MaxLength="30" />
+    <Property Name="no_agent_no_queue" Type="enum" />
+    <Property Name="no_agent_action" Type="enum" />
+    <Property Name="no_agent_action_value" Type="varchar" MaxLength="255" />
+    <Property Name="web_form_address_two" Type="text" />
+    <Property Name="timer_action" Type="enum" />
+    <Property Name="timer_action_message" Type="varchar" MaxLength="255" />
+    <Property Name="timer_action_seconds" Type="mediumint" />
+    <Property Name="start_call_url" Type="text" />
+    <Property Name="dispo_call_url" Type="text" />
+    <Property Name="xferconf_c_number" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_d_number" Type="varchar" MaxLength="50" />
+    <Property Name="xferconf_e_number" Type="varchar" MaxLength="50" />
+    <Property Name="ignore_list_script_override" Type="enum" />
+    <Property Name="extension_appended_cidname" Type="enum" />
+    <Property Name="uniqueid_status_display" Type="enum" />
+    <Property Name="uniqueid_status_prefix" Type="varchar" MaxLength="50" />
+    <Property Name="hold_time_option_minimum" Type="smallint" />
+    <Property Name="hold_time_option_press_filename" Type="varchar" MaxLength="255" />
+    <Property Name="hold_time_option_callmenu" Type="varchar" MaxLength="50" />
+    <Property Name="hold_time_option_no_block" Type="enum" />
+    <Property Name="hold_time_option_prompt_seconds" Type="smallint" />
+    <Property Name="onhold_prompt_no_block" Type="enum" />
+    <Property Name="onhold_prompt_seconds" Type="smallint" />
+    <Property Name="hold_time_second_option" Type="varchar" MaxLength="30" />
+    <Property Name="hold_time_third_option" Type="varchar" MaxLength="30" />
+    <Property Name="wait_hold_option_priority" Type="enum" />
+    <Property Name="wait_time_option" Type="varchar" MaxLength="30" />
+    <Property Name="wait_time_second_option" Type="varchar" MaxLength="30" />
+    <Property Name="wait_time_third_option" Type="varchar" MaxLength="30" />
+    <Property Name="wait_time_option_seconds" Type="smallint" />
+    <Property Name="wait_time_option_exten" Type="varchar" MaxLength="20" />
+    <Property Name="wait_time_option_voicemail" Type="varchar" MaxLength="20" />
+    <Property Name="wait_time_option_xfer_group" Type="varchar" MaxLength="20" />
+    <Property Name="wait_time_option_callmenu" Type="varchar" MaxLength="50" />
+    <Property Name="wait_time_option_callback_filename" Type="varchar" MaxLength="255" />
+    <Property Name="wait_time_option_callback_list_id" Type="ubigint" />
+    <Property Name="wait_time_option_press_filename" Type="varchar" MaxLength="255" />
+    <Property Name="wait_time_option_no_block" Type="enum" />
+    <Property Name="wait_time_option_prompt_seconds" Type="smallint" />
+    <Property Name="timer_action_destination" Type="varchar" MaxLength="30" />
+    <Property Name="calculate_estimated_hold_seconds" Type="usmallint" />
+    <Property Name="add_lead_url" Type="text" />
+    <Property Name="eht_minimum_prompt_filename" Type="varchar" MaxLength="255" />
+    <Property Name="eht_minimum_prompt_no_block" Type="enum" />
+    <Property Name="eht_minimum_prompt_seconds" Type="smallint" />
+    <Property Name="on_hook_ring_time" Type="smallint" />
+  </EntityType>
+  <EntityType Name="vicidial_lead_recycle">
+    <Key>
+      <PropertyRef Name="recycle_id" />
+    </Key>
+    <Property Name="recycle_id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="campaign_id" Type="varchar" MaxLength="8" />
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="attempt_delay" Type="usmallint" />
+    <Property Name="attempt_maximum" Type="utinyint" />
+    <Property Name="active" Type="enum" />
+  </EntityType>
+  <EntityType Name="vicidial_log">
+    <Key>
+      <PropertyRef Name="uniqueid" />
+    </Key>
+    <Property Name="uniqueid" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="lead_id" Type="uint" Nullable="false" />
+    <Property Name="list_id" Type="ubigint" />
+    <Property Name="campaign_id" Type="varchar" MaxLength="8" />
+    <Property Name="call_date" Type="datetime" />
+    <Property Name="start_epoch" Type="uint" />
+    <Property Name="end_epoch" Type="uint" />
+    <Property Name="length_in_sec" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="6" />
+    <Property Name="phone_code" Type="varchar" MaxLength="10" />
+    <Property Name="phone_number" Type="varchar" MaxLength="18" />
+    <Property Name="user" Type="varchar" MaxLength="20" />
+    <Property Name="comments" Type="varchar" MaxLength="255" />
+    <Property Name="processed" Type="enum" />
+    <Property Name="user_group" Type="varchar" MaxLength="20" />
+    <Property Name="term_reason" Type="enum" />
+    <Property Name="alt_dial" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_pause_codes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_pause_codes">
+    <Key>
+      <PropertyRef Name="pause_code" />
+    </Key>
+    <Property Name="pause_code" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="pause_code_name" Type="varchar" MaxLength="30" />
+    <Property Name="billable" Type="enum" />
+    <Property Name="campaign_id" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="vicidial_statuses">
+    <Key>
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="status" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="status_name" Type="varchar" MaxLength="30" />
+    <Property Name="selectable" Type="enum" />
+    <Property Name="human_answered" Type="enum" />
+    <Property Name="category" Type="varchar" MaxLength="20" />
+    <Property Name="sale" Type="enum" />
+    <Property Name="dnc" Type="enum" />
+    <Property Name="customer_contact" Type="enum" />
+    <Property Name="not_interested" Type="enum" />
+    <Property Name="unworkable" Type="enum" />
+    <Property Name="scheduled_callback" Type="enum" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_user_groups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_user_groups">
+    <Key>
+      <PropertyRef Name="user_group" />
+      <PropertyRef Name="group_name" />
+    </Key>
+    <Property Name="user_group" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="group_name" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="allowed_campaigns" Type="text" />
+    <Property Name="qc_allowed_campaigns" Type="text" />
+    <Property Name="qc_allowed_inbound_groups" Type="text" />
+    <Property Name="group_shifts" Type="text" />
+    <Property Name="forced_timeclock_login" Type="enum" />
+    <Property Name="shift_enforcement" Type="enum" />
+    <Property Name="agent_status_viewable_groups" Type="text" />
+    <Property Name="agent_status_view_time" Type="enum" />
+    <Property Name="agent_call_log_view" Type="enum" />
+    <Property Name="agent_xfer_consultative" Type="enum" />
+    <Property Name="agent_xfer_dial_override" Type="enum" />
+    <Property Name="agent_xfer_vm_transfer" Type="enum" />
+    <Property Name="agent_xfer_blind_transfer" Type="enum" />
+    <Property Name="agent_xfer_dial_with_customer" Type="enum" />
+    <Property Name="agent_xfer_park_customer_dial" Type="enum" />
+    <Property Name="agent_fullscreen" Type="enum" />
+    <Property Name="allowed_reports" Type="varchar" MaxLength="2000" />
+    <Property Name="webphone_url_override" Type="varchar" MaxLength="255" />
+    <Property Name="webphone_systemkey_override" Type="varchar" MaxLength="100" />
+    <Property Name="webphone_dialpad_override" Type="enum" />
+  </EntityType>
+  <EntityType Name="vicidial_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="uint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="pass" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="full_name" Type="varchar" MaxLength="50" />
+    <Property Name="user_level" Type="tinyint" />
+    <Property Name="user_group" Type="varchar" MaxLength="20" />
+    <Property Name="phone_login" Type="varchar" MaxLength="20" />
+    <Property Name="phone_pass" Type="varchar" MaxLength="20" />
+    <Property Name="delete_users" Type="enum" />
+    <Property Name="delete_user_groups" Type="enum" />
+    <Property Name="delete_lists" Type="enum" />
+    <Property Name="delete_campaigns" Type="enum" />
+    <Property Name="delete_ingroups" Type="enum" />
+    <Property Name="delete_remote_agents" Type="enum" />
+    <Property Name="load_leads" Type="enum" />
+    <Property Name="campaign_detail" Type="enum" />
+    <Property Name="ast_admin_access" Type="enum" />
+    <Property Name="ast_delete_phones" Type="enum" />
+    <Property Name="delete_scripts" Type="enum" />
+    <Property Name="modify_leads" Type="enum" />
+    <Property Name="hotkeys_active" Type="enum" />
+    <Property Name="change_agent_campaign" Type="enum" />
+    <Property Name="agent_choose_ingroups" Type="enum" />
+    <Property Name="closer_campaigns" Type="text" />
+    <Property Name="scheduled_callbacks" Type="enum" />
+    <Property Name="agentonly_callbacks" Type="enum" />
+    <Property Name="agentcall_manual" Type="enum" />
+    <Property Name="vicidial_recording" Type="enum" />
+    <Property Name="vicidial_transfers" Type="enum" />
+    <Property Name="delete_filters" Type="enum" />
+    <Property Name="alter_agent_interface_options" Type="enum" />
+    <Property Name="closer_default_blended" Type="enum" />
+    <Property Name="delete_call_times" Type="enum" />
+    <Property Name="modify_call_times" Type="enum" />
+    <Property Name="modify_users" Type="enum" />
+    <Property Name="modify_campaigns" Type="enum" />
+    <Property Name="modify_lists" Type="enum" />
+    <Property Name="modify_scripts" Type="enum" />
+    <Property Name="modify_filters" Type="enum" />
+    <Property Name="modify_ingroups" Type="enum" />
+    <Property Name="modify_usergroups" Type="enum" />
+    <Property Name="modify_remoteagents" Type="enum" />
+    <Property Name="modify_servers" Type="enum" />
+    <Property Name="view_reports" Type="enum" />
+    <Property Name="vicidial_recording_override" Type="enum" />
+    <Property Name="alter_custdata_override" Type="enum" />
+    <Property Name="qc_enabled" Type="enum" />
+    <Property Name="qc_user_level" Type="int" />
+    <Property Name="qc_pass" Type="enum" />
+    <Property Name="qc_finish" Type="enum" />
+    <Property Name="qc_commit" Type="enum" />
+    <Property Name="add_timeclock_log" Type="enum" />
+    <Property Name="modify_timeclock_log" Type="enum" />
+    <Property Name="delete_timeclock_log" Type="enum" />
+    <Property Name="alter_custphone_override" Type="enum" />
+    <Property Name="vdc_agent_api_access" Type="enum" />
+    <Property Name="modify_inbound_dids" Type="enum" />
+    <Property Name="delete_inbound_dids" Type="enum" />
+    <Property Name="active" Type="enum" />
+    <Property Name="alert_enabled" Type="enum" />
+    <Property Name="download_lists" Type="enum" />
+    <Property Name="agent_shift_enforcement_override" Type="enum" />
+    <Property Name="manager_shift_enforcement_override" Type="enum" />
+    <Property Name="shift_override_flag" Type="enum" />
+    <Property Name="export_reports" Type="enum" />
+    <Property Name="delete_from_dnc" Type="enum" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="user_code" Type="varchar" MaxLength="100" />
+    <Property Name="territory" Type="varchar" MaxLength="100" />
+    <Property Name="allow_alerts" Type="enum" />
+    <Property Name="agent_choose_territories" Type="enum" />
+    <Property Name="custom_one" Type="varchar" MaxLength="100" />
+    <Property Name="custom_two" Type="varchar" MaxLength="100" />
+    <Property Name="custom_three" Type="varchar" MaxLength="100" />
+    <Property Name="custom_four" Type="varchar" MaxLength="100" />
+    <Property Name="custom_five" Type="varchar" MaxLength="100" />
+    <Property Name="voicemail_id" Type="varchar" MaxLength="10" />
+    <Property Name="agent_call_log_view_override" Type="enum" />
+    <Property Name="callcard_admin" Type="enum" />
+    <Property Name="agent_choose_blended" Type="enum" />
+    <Property Name="realtime_block_user_info" Type="enum" />
+    <Property Name="custom_fields_modify" Type="enum" />
+    <Property Name="force_change_password" Type="enum" />
+    <Property Name="agent_lead_search_override" Type="enum" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_xfer_presets' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_xfer_presets">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+      <PropertyRef Name="preset_name" />
+      <PropertyRef Name="preset_number" />
+    </Key>
+    <Property Name="campaign_id" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="preset_name" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="preset_number" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="preset_dtmf" Type="varchar" MaxLength="50" />
+    <Property Name="preset_hide_number" Type="enum" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'asterisk.vicidial_xfer_stats' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vicidial_xfer_stats">
+    <Key>
+      <PropertyRef Name="campaign_id" />
+      <PropertyRef Name="preset_name" />
+    </Key>
+    <Property Name="campaign_id" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="preset_name" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="xfer_count" Type="usmallint" />
+  </EntityType>
+</Schema>

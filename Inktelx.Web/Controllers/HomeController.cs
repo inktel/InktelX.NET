@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Inktelx.Web.Controllers
+namespace InktelX.Web.Controllers
 {
     public class HomeController : Controller
     {

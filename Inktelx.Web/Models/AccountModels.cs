@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace Inktelx.Web.Models
+namespace InktelX.Web.Models
 {
 
     public class ChangePasswordModel

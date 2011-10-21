@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using Inktelx.Web.Models;
+using InktelX.Web.Models;
 
-namespace Inktelx.Web.Controllers
+namespace InktelX.Web.Controllers
 {
     public class AccountController : Controller
     {

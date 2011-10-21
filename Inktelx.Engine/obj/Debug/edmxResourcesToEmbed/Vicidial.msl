@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vicidialModelStoreContainer" CdmEntityContainer="VicidialEntities">
+    <EntitySetMapping Name="vicidial_admin_log">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_admin_log">
+        <MappingFragment StoreEntitySet="vicidial_admin_log">
+          <ScalarProperty Name="admin_log_id" ColumnName="admin_log_id" />
+          <ScalarProperty Name="event_date" ColumnName="event_date" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="event_section" ColumnName="event_section" />
+          <ScalarProperty Name="event_type" ColumnName="event_type" />
+          <ScalarProperty Name="record_id" ColumnName="record_id" />
+          <ScalarProperty Name="event_code" ColumnName="event_code" />
+          <ScalarProperty Name="event_sql" ColumnName="event_sql" />
+          <ScalarProperty Name="event_notes" ColumnName="event_notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_call_times">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_call_times">
+        <MappingFragment StoreEntitySet="vicidial_call_times">
+          <ScalarProperty Name="call_time_id" ColumnName="call_time_id" />
+          <ScalarProperty Name="call_time_name" ColumnName="call_time_name" />
+          <ScalarProperty Name="call_time_comments" ColumnName="call_time_comments" />
+          <ScalarProperty Name="ct_default_start" ColumnName="ct_default_start" />
+          <ScalarProperty Name="ct_default_stop" ColumnName="ct_default_stop" />
+          <ScalarProperty Name="ct_sunday_start" ColumnName="ct_sunday_start" />
+          <ScalarProperty Name="ct_sunday_stop" ColumnName="ct_sunday_stop" />
+          <ScalarProperty Name="ct_monday_start" ColumnName="ct_monday_start" />
+          <ScalarProperty Name="ct_monday_stop" ColumnName="ct_monday_stop" />
+          <ScalarProperty Name="ct_tuesday_start" ColumnName="ct_tuesday_start" />
+          <ScalarProperty Name="ct_tuesday_stop" ColumnName="ct_tuesday_stop" />
+          <ScalarProperty Name="ct_wednesday_start" ColumnName="ct_wednesday_start" />
+          <ScalarProperty Name="ct_wednesday_stop" ColumnName="ct_wednesday_stop" />
+          <ScalarProperty Name="ct_thursday_start" ColumnName="ct_thursday_start" />
+          <ScalarProperty Name="ct_thursday_stop" ColumnName="ct_thursday_stop" />
+          <ScalarProperty Name="ct_friday_start" ColumnName="ct_friday_start" />
+          <ScalarProperty Name="ct_friday_stop" ColumnName="ct_friday_stop" />
+          <ScalarProperty Name="ct_saturday_start" ColumnName="ct_saturday_start" />
+          <ScalarProperty Name="ct_saturday_stop" ColumnName="ct_saturday_stop" />
+          <ScalarProperty Name="ct_state_call_times" ColumnName="ct_state_call_times" />
+          <ScalarProperty Name="default_afterhours_filename_override" ColumnName="default_afterhours_filename_override" />
+          <ScalarProperty Name="sunday_afterhours_filename_override" ColumnName="sunday_afterhours_filename_override" />
+          <ScalarProperty Name="monday_afterhours_filename_override" ColumnName="monday_afterhours_filename_override" />
+          <ScalarProperty Name="tuesday_afterhours_filename_override" ColumnName="tuesday_afterhours_filename_override" />
+          <ScalarProperty Name="wednesday_afterhours_filename_override" ColumnName="wednesday_afterhours_filename_override" />
+          <ScalarProperty Name="thursday_afterhours_filename_override" ColumnName="thursday_afterhours_filename_override" />
+          <ScalarProperty Name="friday_afterhours_filename_override" ColumnName="friday_afterhours_filename_override" />
+          <ScalarProperty Name="saturday_afterhours_filename_override" ColumnName="saturday_afterhours_filename_override" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_campaign_hotkeys">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_campaign_hotkeys">
+        <MappingFragment StoreEntitySet="vicidial_campaign_hotkeys">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="hotkey" ColumnName="hotkey" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="selectable" ColumnName="selectable" />
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_campaign_stats">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_campaign_stats">
+        <MappingFragment StoreEntitySet="vicidial_campaign_stats">
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="dialable_leads" ColumnName="dialable_leads" />
+          <ScalarProperty Name="calls_today" ColumnName="calls_today" />
+          <ScalarProperty Name="answers_today" ColumnName="answers_today" />
+          <ScalarProperty Name="drops_today" ColumnName="drops_today" />
+          <ScalarProperty Name="drops_today_pct" ColumnName="drops_today_pct" />
+          <ScalarProperty Name="drops_answers_today_pct" ColumnName="drops_answers_today_pct" />
+          <ScalarProperty Name="calls_hour" ColumnName="calls_hour" />
+          <ScalarProperty Name="answers_hour" ColumnName="answers_hour" />
+          <ScalarProperty Name="drops_hour" ColumnName="drops_hour" />
+          <ScalarProperty Name="drops_hour_pct" ColumnName="drops_hour_pct" />
+          <ScalarProperty Name="calls_halfhour" ColumnName="calls_halfhour" />
+          <ScalarProperty Name="answers_halfhour" ColumnName="answers_halfhour" />
+          <ScalarProperty Name="drops_halfhour" ColumnName="drops_halfhour" />
+          <ScalarProperty Name="drops_halfhour_pct" ColumnName="drops_halfhour_pct" />
+          <ScalarProperty Name="calls_fivemin" ColumnName="calls_fivemin" />
+          <ScalarProperty Name="answers_fivemin" ColumnName="answers_fivemin" />
+          <ScalarProperty Name="drops_fivemin" ColumnName="drops_fivemin" />
+          <ScalarProperty Name="drops_fivemin_pct" ColumnName="drops_fivemin_pct" />
+          <ScalarProperty Name="calls_onemin" ColumnName="calls_onemin" />
+          <ScalarProperty Name="answers_onemin" ColumnName="answers_onemin" />
+          <ScalarProperty Name="drops_onemin" ColumnName="drops_onemin" />
+          <ScalarProperty Name="drops_onemin_pct" ColumnName="drops_onemin_pct" />
+          <ScalarProperty Name="differential_onemin" ColumnName="differential_onemin" />
+          <ScalarProperty Name="agents_average_onemin" ColumnName="agents_average_onemin" />
+          <ScalarProperty Name="balance_trunk_fill" ColumnName="balance_trunk_fill" />
+          <ScalarProperty Name="status_category_1" ColumnName="status_category_1" />
+          <ScalarProperty Name="status_category_count_1" ColumnName="status_category_count_1" />
+          <ScalarProperty Name="status_category_2" ColumnName="status_category_2" />
+          <ScalarProperty Name="status_category_count_2" ColumnName="status_category_count_2" />
+          <ScalarProperty Name="status_category_3" ColumnName="status_category_3" />
+          <ScalarProperty Name="status_category_count_3" ColumnName="status_category_count_3" />
+          <ScalarProperty Name="status_category_4" ColumnName="status_category_4" />
+          <ScalarProperty Name="status_category_count_4" ColumnName="status_category_count_4" />
+          <ScalarProperty Name="hold_sec_stat_one" ColumnName="hold_sec_stat_one" />
+          <ScalarProperty Name="hold_sec_stat_two" ColumnName="hold_sec_stat_two" />
+          <ScalarProperty Name="agent_non_pause_sec" ColumnName="agent_non_pause_sec" />
+          <ScalarProperty Name="hold_sec_answer_calls" ColumnName="hold_sec_answer_calls" />
+          <ScalarProperty Name="hold_sec_drop_calls" ColumnName="hold_sec_drop_calls" />
+          <ScalarProperty Name="hold_sec_queue_calls" ColumnName="hold_sec_queue_calls" />
+          <ScalarProperty Name="agent_calls_today" ColumnName="agent_calls_today" />
+          <ScalarProperty Name="agent_wait_today" ColumnName="agent_wait_today" />
+          <ScalarProperty Name="agent_custtalk_today" ColumnName="agent_custtalk_today" />
+          <ScalarProperty Name="agent_acw_today" ColumnName="agent_acw_today" />
+          <ScalarProperty Name="agent_pause_today" ColumnName="agent_pause_today" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_campaign_stats_debug">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_campaign_stats_debug">
+        <MappingFragment StoreEntitySet="vicidial_campaign_stats_debug">
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="server_ip" ColumnName="server_ip" />
+          <ScalarProperty Name="entry_time" ColumnName="entry_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="debug_output" ColumnName="debug_output" />
+          <ScalarProperty Name="adapt_output" ColumnName="adapt_output" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_campaign_statuses">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_campaign_statuses">
+        <MappingFragment StoreEntitySet="vicidial_campaign_statuses">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="selectable" ColumnName="selectable" />
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="human_answered" ColumnName="human_answered" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="sale" ColumnName="sale" />
+          <ScalarProperty Name="dnc" ColumnName="dnc" />
+          <ScalarProperty Name="customer_contact" ColumnName="customer_contact" />
+          <ScalarProperty Name="not_interested" ColumnName="not_interested" />
+          <ScalarProperty Name="unworkable" ColumnName="unworkable" />
+          <ScalarProperty Name="scheduled_callback" ColumnName="scheduled_callback" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_campaigns">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_campaigns">
+        <MappingFragment StoreEntitySet="vicidial_campaigns">
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="campaign_name" ColumnName="campaign_name" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="dial_status_a" ColumnName="dial_status_a" />
+          <ScalarProperty Name="dial_status_b" ColumnName="dial_status_b" />
+          <ScalarProperty Name="dial_status_c" ColumnName="dial_status_c" />
+          <ScalarProperty Name="dial_status_d" ColumnName="dial_status_d" />
+          <ScalarProperty Name="dial_status_e" ColumnName="dial_status_e" />
+          <ScalarProperty Name="lead_order" ColumnName="lead_order" />
+          <ScalarProperty Name="park_ext" ColumnName="park_ext" />
+          <ScalarProperty Name="park_file_name" ColumnName="park_file_name" />
+          <ScalarProperty Name="web_form_address" ColumnName="web_form_address" />
+          <ScalarProperty Name="allow_closers" ColumnName="allow_closers" />
+          <ScalarProperty Name="hopper_level" ColumnName="hopper_level" />
+          <ScalarProperty Name="auto_dial_level" ColumnName="auto_dial_level" />
+          <ScalarProperty Name="next_agent_call" ColumnName="next_agent_call" />
+          <ScalarProperty Name="local_call_time" ColumnName="local_call_time" />
+          <ScalarProperty Name="voicemail_ext" ColumnName="voicemail_ext" />
+          <ScalarProperty Name="dial_timeout" ColumnName="dial_timeout" />
+          <ScalarProperty Name="dial_prefix" ColumnName="dial_prefix" />
+          <ScalarProperty Name="campaign_cid" ColumnName="campaign_cid" />
+          <ScalarProperty Name="campaign_vdad_exten" ColumnName="campaign_vdad_exten" />
+          <ScalarProperty Name="campaign_rec_exten" ColumnName="campaign_rec_exten" />
+          <ScalarProperty Name="campaign_recording" ColumnName="campaign_recording" />
+          <ScalarProperty Name="campaign_rec_filename" ColumnName="campaign_rec_filename" />
+          <ScalarProperty Name="campaign_script" ColumnName="campaign_script" />
+          <ScalarProperty Name="get_call_launch" ColumnName="get_call_launch" />
+          <ScalarProperty Name="am_message_exten" ColumnName="am_message_exten" />
+          <ScalarProperty Name="amd_send_to_vmx" ColumnName="amd_send_to_vmx" />
+          <ScalarProperty Name="xferconf_a_dtmf" ColumnName="xferconf_a_dtmf" />
+          <ScalarProperty Name="xferconf_a_number" ColumnName="xferconf_a_number" />
+          <ScalarProperty Name="xferconf_b_dtmf" ColumnName="xferconf_b_dtmf" />
+          <ScalarProperty Name="xferconf_b_number" ColumnName="xferconf_b_number" />
+          <ScalarProperty Name="alt_number_dialing" ColumnName="alt_number_dialing" />
+          <ScalarProperty Name="scheduled_callbacks" ColumnName="scheduled_callbacks" />
+          <ScalarProperty Name="lead_filter_id" ColumnName="lead_filter_id" />
+          <ScalarProperty Name="drop_call_seconds" ColumnName="drop_call_seconds" />
+          <ScalarProperty Name="drop_action" ColumnName="drop_action" />
+          <ScalarProperty Name="safe_harbor_exten" ColumnName="safe_harbor_exten" />
+          <ScalarProperty Name="display_dialable_count" ColumnName="display_dialable_count" />
+          <ScalarProperty Name="wrapup_seconds" ColumnName="wrapup_seconds" />
+          <ScalarProperty Name="wrapup_message" ColumnName="wrapup_message" />
+          <ScalarProperty Name="closer_campaigns" ColumnName="closer_campaigns" />
+          <ScalarProperty Name="use_internal_dnc" ColumnName="use_internal_dnc" />
+          <ScalarProperty Name="allcalls_delay" ColumnName="allcalls_delay" />
+          <ScalarProperty Name="omit_phone_code" ColumnName="omit_phone_code" />
+          <ScalarProperty Name="dial_method" ColumnName="dial_method" />
+          <ScalarProperty Name="available_only_ratio_tally" ColumnName="available_only_ratio_tally" />
+          <ScalarProperty Name="adaptive_dropped_percentage" ColumnName="adaptive_dropped_percentage" />
+          <ScalarProperty Name="adaptive_maximum_level" ColumnName="adaptive_maximum_level" />
+          <ScalarProperty Name="adaptive_latest_server_time" ColumnName="adaptive_latest_server_time" />
+          <ScalarProperty Name="adaptive_intensity" ColumnName="adaptive_intensity" />
+          <ScalarProperty Name="adaptive_dl_diff_target" ColumnName="adaptive_dl_diff_target" />
+          <ScalarProperty Name="concurrent_transfers" ColumnName="concurrent_transfers" />
+          <ScalarProperty Name="auto_alt_dial" ColumnName="auto_alt_dial" />
+          <ScalarProperty Name="auto_alt_dial_statuses" ColumnName="auto_alt_dial_statuses" />
+          <ScalarProperty Name="agent_pause_codes_active" ColumnName="agent_pause_codes_active" />
+          <ScalarProperty Name="campaign_description" ColumnName="campaign_description" />
+          <ScalarProperty Name="campaign_changedate" ColumnName="campaign_changedate" />
+          <ScalarProperty Name="campaign_stats_refresh" ColumnName="campaign_stats_refresh" />
+          <ScalarProperty Name="campaign_logindate" ColumnName="campaign_logindate" />
+          <ScalarProperty Name="dial_statuses" ColumnName="dial_statuses" />
+          <ScalarProperty Name="disable_alter_custdata" ColumnName="disable_alter_custdata" />
+          <ScalarProperty Name="no_hopper_leads_logins" ColumnName="no_hopper_leads_logins" />
+          <ScalarProperty Name="list_order_mix" ColumnName="list_order_mix" />
+          <ScalarProperty Name="campaign_allow_inbound" ColumnName="campaign_allow_inbound" />
+          <ScalarProperty Name="manual_dial_list_id" ColumnName="manual_dial_list_id" />
+          <ScalarProperty Name="default_xfer_group" ColumnName="default_xfer_group" />
+          <ScalarProperty Name="xfer_groups" ColumnName="xfer_groups" />
+          <ScalarProperty Name="queue_priority" ColumnName="queue_priority" />
+          <ScalarProperty Name="drop_inbound_group" ColumnName="drop_inbound_group" />
+          <ScalarProperty Name="qc_enabled" ColumnName="qc_enabled" />
+          <ScalarProperty Name="qc_statuses" ColumnName="qc_statuses" />
+          <ScalarProperty Name="qc_lists" ColumnName="qc_lists" />
+          <ScalarProperty Name="qc_shift_id" ColumnName="qc_shift_id" />
+          <ScalarProperty Name="qc_get_record_launch" ColumnName="qc_get_record_launch" />
+          <ScalarProperty Name="qc_show_recording" ColumnName="qc_show_recording" />
+          <ScalarProperty Name="qc_web_form_address" ColumnName="qc_web_form_address" />
+          <ScalarProperty Name="qc_script" ColumnName="qc_script" />
+          <ScalarProperty Name="survey_first_audio_file" ColumnName="survey_first_audio_file" />
+          <ScalarProperty Name="survey_dtmf_digits" ColumnName="survey_dtmf_digits" />
+          <ScalarProperty Name="survey_ni_digit" ColumnName="survey_ni_digit" />
+          <ScalarProperty Name="survey_opt_in_audio_file" ColumnName="survey_opt_in_audio_file" />
+          <ScalarProperty Name="survey_ni_audio_file" ColumnName="survey_ni_audio_file" />
+          <ScalarProperty Name="survey_method" ColumnName="survey_method" />
+          <ScalarProperty Name="survey_no_response_action" ColumnName="survey_no_response_action" />
+          <ScalarProperty Name="survey_ni_status" ColumnName="survey_ni_status" />
+          <ScalarProperty Name="survey_response_digit_map" ColumnName="survey_response_digit_map" />
+          <ScalarProperty Name="survey_xfer_exten" ColumnName="survey_xfer_exten" />
+          <ScalarProperty Name="survey_camp_record_dir" ColumnName="survey_camp_record_dir" />
+          <ScalarProperty Name="disable_alter_custphone" ColumnName="disable_alter_custphone" />
+          <ScalarProperty Name="display_queue_count" ColumnName="display_queue_count" />
+          <ScalarProperty Name="manual_dial_filter" ColumnName="manual_dial_filter" />
+          <ScalarProperty Name="agent_clipboard_copy" ColumnName="agent_clipboard_copy" />
+          <ScalarProperty Name="agent_extended_alt_dial" ColumnName="agent_extended_alt_dial" />
+          <ScalarProperty Name="use_campaign_dnc" ColumnName="use_campaign_dnc" />
+          <ScalarProperty Name="three_way_call_cid" ColumnName="three_way_call_cid" />
+          <ScalarProperty Name="three_way_dial_prefix" ColumnName="three_way_dial_prefix" />
+          <ScalarProperty Name="web_form_target" ColumnName="web_form_target" />
+          <ScalarProperty Name="vtiger_search_category" ColumnName="vtiger_search_category" />
+          <ScalarProperty Name="vtiger_create_call_record" ColumnName="vtiger_create_call_record" />
+          <ScalarProperty Name="vtiger_create_lead_record" ColumnName="vtiger_create_lead_record" />
+          <ScalarProperty Name="vtiger_screen_login" ColumnName="vtiger_screen_login" />
+          <ScalarProperty Name="cpd_amd_action" ColumnName="cpd_amd_action" />
+          <ScalarProperty Name="agent_allow_group_alias" ColumnName="agent_allow_group_alias" />
+          <ScalarProperty Name="default_group_alias" ColumnName="default_group_alias" />
+          <ScalarProperty Name="vtiger_search_dead" ColumnName="vtiger_search_dead" />
+          <ScalarProperty Name="vtiger_status_call" ColumnName="vtiger_status_call" />
+          <ScalarProperty Name="survey_third_digit" ColumnName="survey_third_digit" />
+          <ScalarProperty Name="survey_third_audio_file" ColumnName="survey_third_audio_file" />
+          <ScalarProperty Name="survey_third_status" ColumnName="survey_third_status" />
+          <ScalarProperty Name="survey_third_exten" ColumnName="survey_third_exten" />
+          <ScalarProperty Name="survey_fourth_digit" ColumnName="survey_fourth_digit" />
+          <ScalarProperty Name="survey_fourth_audio_file" ColumnName="survey_fourth_audio_file" />
+          <ScalarProperty Name="survey_fourth_status" ColumnName="survey_fourth_status" />
+          <ScalarProperty Name="survey_fourth_exten" ColumnName="survey_fourth_exten" />
+          <ScalarProperty Name="drop_lockout_time" ColumnName="drop_lockout_time" />
+          <ScalarProperty Name="quick_transfer_button" ColumnName="quick_transfer_button" />
+          <ScalarProperty Name="prepopulate_transfer_preset" ColumnName="prepopulate_transfer_preset" />
+          <ScalarProperty Name="drop_rate_group" ColumnName="drop_rate_group" />
+          <ScalarProperty Name="view_calls_in_queue" ColumnName="view_calls_in_queue" />
+          <ScalarProperty Name="view_calls_in_queue_launch" ColumnName="view_calls_in_queue_launch" />
+          <ScalarProperty Name="grab_calls_in_queue" ColumnName="grab_calls_in_queue" />
+          <ScalarProperty Name="call_requeue_button" ColumnName="call_requeue_button" />
+          <ScalarProperty Name="pause_after_each_call" ColumnName="pause_after_each_call" />
+          <ScalarProperty Name="no_hopper_dialing" ColumnName="no_hopper_dialing" />
+          <ScalarProperty Name="agent_dial_owner_only" ColumnName="agent_dial_owner_only" />
+          <ScalarProperty Name="agent_display_dialable_leads" ColumnName="agent_display_dialable_leads" />
+          <ScalarProperty Name="web_form_address_two" ColumnName="web_form_address_two" />
+          <ScalarProperty Name="waitforsilence_options" ColumnName="waitforsilence_options" />
+          <ScalarProperty Name="agent_select_territories" ColumnName="agent_select_territories" />
+          <ScalarProperty Name="campaign_calldate" ColumnName="campaign_calldate" />
+          <ScalarProperty Name="crm_popup_login" ColumnName="crm_popup_login" />
+          <ScalarProperty Name="crm_login_address" ColumnName="crm_login_address" />
+          <ScalarProperty Name="timer_action" ColumnName="timer_action" />
+          <ScalarProperty Name="timer_action_message" ColumnName="timer_action_message" />
+          <ScalarProperty Name="timer_action_seconds" ColumnName="timer_action_seconds" />
+          <ScalarProperty Name="start_call_url" ColumnName="start_call_url" />
+          <ScalarProperty Name="dispo_call_url" ColumnName="dispo_call_url" />
+          <ScalarProperty Name="xferconf_c_number" ColumnName="xferconf_c_number" />
+          <ScalarProperty Name="xferconf_d_number" ColumnName="xferconf_d_number" />
+          <ScalarProperty Name="xferconf_e_number" ColumnName="xferconf_e_number" />
+          <ScalarProperty Name="use_custom_cid" ColumnName="use_custom_cid" />
+          <ScalarProperty Name="scheduled_callbacks_alert" ColumnName="scheduled_callbacks_alert" />
+          <ScalarProperty Name="queuemetrics_callstatus_override" ColumnName="queuemetrics_callstatus_override" />
+          <ScalarProperty Name="extension_appended_cidname" ColumnName="extension_appended_cidname" />
+          <ScalarProperty Name="scheduled_callbacks_count" ColumnName="scheduled_callbacks_count" />
+          <ScalarProperty Name="manual_dial_override" ColumnName="manual_dial_override" />
+          <ScalarProperty Name="blind_monitor_warning" ColumnName="blind_monitor_warning" />
+          <ScalarProperty Name="blind_monitor_message" ColumnName="blind_monitor_message" />
+          <ScalarProperty Name="blind_monitor_filename" ColumnName="blind_monitor_filename" />
+          <ScalarProperty Name="inbound_queue_no_dial" ColumnName="inbound_queue_no_dial" />
+          <ScalarProperty Name="timer_action_destination" ColumnName="timer_action_destination" />
+          <ScalarProperty Name="enable_xfer_presets" ColumnName="enable_xfer_presets" />
+          <ScalarProperty Name="hide_xfer_number_to_dial" ColumnName="hide_xfer_number_to_dial" />
+          <ScalarProperty Name="manual_dial_prefix" ColumnName="manual_dial_prefix" />
+          <ScalarProperty Name="customer_3way_hangup_logging" ColumnName="customer_3way_hangup_logging" />
+          <ScalarProperty Name="customer_3way_hangup_seconds" ColumnName="customer_3way_hangup_seconds" />
+          <ScalarProperty Name="customer_3way_hangup_action" ColumnName="customer_3way_hangup_action" />
+          <ScalarProperty Name="ivr_park_call" ColumnName="ivr_park_call" />
+          <ScalarProperty Name="ivr_park_call_agi" ColumnName="ivr_park_call_agi" />
+          <ScalarProperty Name="manual_preview_dial" ColumnName="manual_preview_dial" />
+          <ScalarProperty Name="realtime_agent_time_stats" ColumnName="realtime_agent_time_stats" />
+          <ScalarProperty Name="use_auto_hopper" ColumnName="use_auto_hopper" />
+          <ScalarProperty Name="auto_hopper_multi" ColumnName="auto_hopper_multi" />
+          <ScalarProperty Name="auto_hopper_level" ColumnName="auto_hopper_level" />
+          <ScalarProperty Name="auto_trim_hopper" ColumnName="auto_trim_hopper" />
+          <ScalarProperty Name="api_manual_dial" ColumnName="api_manual_dial" />
+          <ScalarProperty Name="manual_dial_call_time_check" ColumnName="manual_dial_call_time_check" />
+          <ScalarProperty Name="display_leads_count" ColumnName="display_leads_count" />
+          <ScalarProperty Name="lead_order_randomize" ColumnName="lead_order_randomize" />
+          <ScalarProperty Name="lead_order_secondary" ColumnName="lead_order_secondary" />
+          <ScalarProperty Name="per_call_notes" ColumnName="per_call_notes" />
+          <ScalarProperty Name="my_callback_option" ColumnName="my_callback_option" />
+          <ScalarProperty Name="agent_lead_search" ColumnName="agent_lead_search" />
+          <ScalarProperty Name="agent_lead_search_method" ColumnName="agent_lead_search_method" />
+          <ScalarProperty Name="queuemetrics_phone_environment" ColumnName="queuemetrics_phone_environment" />
+          <ScalarProperty Name="auto_pause_precall" ColumnName="auto_pause_precall" />
+          <ScalarProperty Name="auto_pause_precall_code" ColumnName="auto_pause_precall_code" />
+          <ScalarProperty Name="auto_resume_precall" ColumnName="auto_resume_precall" />
+          <ScalarProperty Name="manual_dial_cid" ColumnName="manual_dial_cid" />
+          <ScalarProperty Name="post_phone_time_diff_alert" ColumnName="post_phone_time_diff_alert" />
+          <ScalarProperty Name="custom_3way_button_transfer" ColumnName="custom_3way_button_transfer" />
+          <ScalarProperty Name="available_only_tally_threshold" ColumnName="available_only_tally_threshold" />
+          <ScalarProperty Name="available_only_tally_threshold_agents" ColumnName="available_only_tally_threshold_agents" />
+          <ScalarProperty Name="dial_level_threshold" ColumnName="dial_level_threshold" />
+          <ScalarProperty Name="dial_level_threshold_agents" ColumnName="dial_level_threshold_agents" />
+          <ScalarProperty Name="safe_harbor_audio" ColumnName="safe_harbor_audio" />
+          <ScalarProperty Name="safe_harbor_menu_id" ColumnName="safe_harbor_menu_id" />
+          <ScalarProperty Name="survey_menu_id" ColumnName="survey_menu_id" />
+          <ScalarProperty Name="callback_days_limit" ColumnName="callback_days_limit" />
+          <ScalarProperty Name="dl_diff_target_method" ColumnName="dl_diff_target_method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_inbound_groups">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_inbound_groups">
+        <MappingFragment StoreEntitySet="vicidial_inbound_groups">
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="group_color" ColumnName="group_color" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="web_form_address" ColumnName="web_form_address" />
+          <ScalarProperty Name="voicemail_ext" ColumnName="voicemail_ext" />
+          <ScalarProperty Name="next_agent_call" ColumnName="next_agent_call" />
+          <ScalarProperty Name="fronter_display" ColumnName="fronter_display" />
+          <ScalarProperty Name="ingroup_script" ColumnName="ingroup_script" />
+          <ScalarProperty Name="get_call_launch" ColumnName="get_call_launch" />
+          <ScalarProperty Name="xferconf_a_dtmf" ColumnName="xferconf_a_dtmf" />
+          <ScalarProperty Name="xferconf_a_number" ColumnName="xferconf_a_number" />
+          <ScalarProperty Name="xferconf_b_dtmf" ColumnName="xferconf_b_dtmf" />
+          <ScalarProperty Name="xferconf_b_number" ColumnName="xferconf_b_number" />
+          <ScalarProperty Name="drop_call_seconds" ColumnName="drop_call_seconds" />
+          <ScalarProperty Name="drop_action" ColumnName="drop_action" />
+          <ScalarProperty Name="drop_exten" ColumnName="drop_exten" />
+          <ScalarProperty Name="call_time_id" ColumnName="call_time_id" />
+          <ScalarProperty Name="after_hours_action" ColumnName="after_hours_action" />
+          <ScalarProperty Name="after_hours_message_filename" ColumnName="after_hours_message_filename" />
+          <ScalarProperty Name="after_hours_exten" ColumnName="after_hours_exten" />
+          <ScalarProperty Name="after_hours_voicemail" ColumnName="after_hours_voicemail" />
+          <ScalarProperty Name="welcome_message_filename" ColumnName="welcome_message_filename" />
+          <ScalarProperty Name="moh_context" ColumnName="moh_context" />
+          <ScalarProperty Name="onhold_prompt_filename" ColumnName="onhold_prompt_filename" />
+          <ScalarProperty Name="prompt_interval" ColumnName="prompt_interval" />
+          <ScalarProperty Name="agent_alert_exten" ColumnName="agent_alert_exten" />
+          <ScalarProperty Name="agent_alert_delay" ColumnName="agent_alert_delay" />
+          <ScalarProperty Name="default_xfer_group" ColumnName="default_xfer_group" />
+          <ScalarProperty Name="queue_priority" ColumnName="queue_priority" />
+          <ScalarProperty Name="drop_inbound_group" ColumnName="drop_inbound_group" />
+          <ScalarProperty Name="ingroup_recording_override" ColumnName="ingroup_recording_override" />
+          <ScalarProperty Name="ingroup_rec_filename" ColumnName="ingroup_rec_filename" />
+          <ScalarProperty Name="afterhours_xfer_group" ColumnName="afterhours_xfer_group" />
+          <ScalarProperty Name="qc_enabled" ColumnName="qc_enabled" />
+          <ScalarProperty Name="qc_statuses" ColumnName="qc_statuses" />
+          <ScalarProperty Name="qc_shift_id" ColumnName="qc_shift_id" />
+          <ScalarProperty Name="qc_get_record_launch" ColumnName="qc_get_record_launch" />
+          <ScalarProperty Name="qc_show_recording" ColumnName="qc_show_recording" />
+          <ScalarProperty Name="qc_web_form_address" ColumnName="qc_web_form_address" />
+          <ScalarProperty Name="qc_script" ColumnName="qc_script" />
+          <ScalarProperty Name="play_place_in_line" ColumnName="play_place_in_line" />
+          <ScalarProperty Name="play_estimate_hold_time" ColumnName="play_estimate_hold_time" />
+          <ScalarProperty Name="hold_time_option" ColumnName="hold_time_option" />
+          <ScalarProperty Name="hold_time_option_seconds" ColumnName="hold_time_option_seconds" />
+          <ScalarProperty Name="hold_time_option_exten" ColumnName="hold_time_option_exten" />
+          <ScalarProperty Name="hold_time_option_voicemail" ColumnName="hold_time_option_voicemail" />
+          <ScalarProperty Name="hold_time_option_xfer_group" ColumnName="hold_time_option_xfer_group" />
+          <ScalarProperty Name="hold_time_option_callback_filename" ColumnName="hold_time_option_callback_filename" />
+          <ScalarProperty Name="hold_time_option_callback_list_id" ColumnName="hold_time_option_callback_list_id" />
+          <ScalarProperty Name="hold_recall_xfer_group" ColumnName="hold_recall_xfer_group" />
+          <ScalarProperty Name="no_delay_call_route" ColumnName="no_delay_call_route" />
+          <ScalarProperty Name="play_welcome_message" ColumnName="play_welcome_message" />
+          <ScalarProperty Name="answer_sec_pct_rt_stat_one" ColumnName="answer_sec_pct_rt_stat_one" />
+          <ScalarProperty Name="answer_sec_pct_rt_stat_two" ColumnName="answer_sec_pct_rt_stat_two" />
+          <ScalarProperty Name="default_group_alias" ColumnName="default_group_alias" />
+          <ScalarProperty Name="no_agent_no_queue" ColumnName="no_agent_no_queue" />
+          <ScalarProperty Name="no_agent_action" ColumnName="no_agent_action" />
+          <ScalarProperty Name="no_agent_action_value" ColumnName="no_agent_action_value" />
+          <ScalarProperty Name="web_form_address_two" ColumnName="web_form_address_two" />
+          <ScalarProperty Name="timer_action" ColumnName="timer_action" />
+          <ScalarProperty Name="timer_action_message" ColumnName="timer_action_message" />
+          <ScalarProperty Name="timer_action_seconds" ColumnName="timer_action_seconds" />
+          <ScalarProperty Name="start_call_url" ColumnName="start_call_url" />
+          <ScalarProperty Name="dispo_call_url" ColumnName="dispo_call_url" />
+          <ScalarProperty Name="xferconf_c_number" ColumnName="xferconf_c_number" />
+          <ScalarProperty Name="xferconf_d_number" ColumnName="xferconf_d_number" />
+          <ScalarProperty Name="xferconf_e_number" ColumnName="xferconf_e_number" />
+          <ScalarProperty Name="ignore_list_script_override" ColumnName="ignore_list_script_override" />
+          <ScalarProperty Name="extension_appended_cidname" ColumnName="extension_appended_cidname" />
+          <ScalarProperty Name="uniqueid_status_display" ColumnName="uniqueid_status_display" />
+          <ScalarProperty Name="uniqueid_status_prefix" ColumnName="uniqueid_status_prefix" />
+          <ScalarProperty Name="hold_time_option_minimum" ColumnName="hold_time_option_minimum" />
+          <ScalarProperty Name="hold_time_option_press_filename" ColumnName="hold_time_option_press_filename" />
+          <ScalarProperty Name="hold_time_option_callmenu" ColumnName="hold_time_option_callmenu" />
+          <ScalarProperty Name="hold_time_option_no_block" ColumnName="hold_time_option_no_block" />
+          <ScalarProperty Name="hold_time_option_prompt_seconds" ColumnName="hold_time_option_prompt_seconds" />
+          <ScalarProperty Name="onhold_prompt_no_block" ColumnName="onhold_prompt_no_block" />
+          <ScalarProperty Name="onhold_prompt_seconds" ColumnName="onhold_prompt_seconds" />
+          <ScalarProperty Name="hold_time_second_option" ColumnName="hold_time_second_option" />
+          <ScalarProperty Name="hold_time_third_option" ColumnName="hold_time_third_option" />
+          <ScalarProperty Name="wait_hold_option_priority" ColumnName="wait_hold_option_priority" />
+          <ScalarProperty Name="wait_time_option" ColumnName="wait_time_option" />
+          <ScalarProperty Name="wait_time_second_option" ColumnName="wait_time_second_option" />
+          <ScalarProperty Name="wait_time_third_option" ColumnName="wait_time_third_option" />
+          <ScalarProperty Name="wait_time_option_seconds" ColumnName="wait_time_option_seconds" />
+          <ScalarProperty Name="wait_time_option_exten" ColumnName="wait_time_option_exten" />
+          <ScalarProperty Name="wait_time_option_voicemail" ColumnName="wait_time_option_voicemail" />
+          <ScalarProperty Name="wait_time_option_xfer_group" ColumnName="wait_time_option_xfer_group" />
+          <ScalarProperty Name="wait_time_option_callmenu" ColumnName="wait_time_option_callmenu" />
+          <ScalarProperty Name="wait_time_option_callback_filename" ColumnName="wait_time_option_callback_filename" />
+          <ScalarProperty Name="wait_time_option_callback_list_id" ColumnName="wait_time_option_callback_list_id" />
+          <ScalarProperty Name="wait_time_option_press_filename" ColumnName="wait_time_option_press_filename" />
+          <ScalarProperty Name="wait_time_option_no_block" ColumnName="wait_time_option_no_block" />
+          <ScalarProperty Name="wait_time_option_prompt_seconds" ColumnName="wait_time_option_prompt_seconds" />
+          <ScalarProperty Name="timer_action_destination" ColumnName="timer_action_destination" />
+          <ScalarProperty Name="calculate_estimated_hold_seconds" ColumnName="calculate_estimated_hold_seconds" />
+          <ScalarProperty Name="add_lead_url" ColumnName="add_lead_url" />
+          <ScalarProperty Name="eht_minimum_prompt_filename" ColumnName="eht_minimum_prompt_filename" />
+          <ScalarProperty Name="eht_minimum_prompt_no_block" ColumnName="eht_minimum_prompt_no_block" />
+          <ScalarProperty Name="eht_minimum_prompt_seconds" ColumnName="eht_minimum_prompt_seconds" />
+          <ScalarProperty Name="on_hook_ring_time" ColumnName="on_hook_ring_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_lead_recycle">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_lead_recycle">
+        <MappingFragment StoreEntitySet="vicidial_lead_recycle">
+          <ScalarProperty Name="recycle_id" ColumnName="recycle_id" />
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="attempt_delay" ColumnName="attempt_delay" />
+          <ScalarProperty Name="attempt_maximum" ColumnName="attempt_maximum" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_log">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_log">
+        <MappingFragment StoreEntitySet="vicidial_log">
+          <ScalarProperty Name="uniqueid" ColumnName="uniqueid" />
+          <ScalarProperty Name="lead_id" ColumnName="lead_id" />
+          <ScalarProperty Name="list_id" ColumnName="list_id" />
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="call_date" ColumnName="call_date" />
+          <ScalarProperty Name="start_epoch" ColumnName="start_epoch" />
+          <ScalarProperty Name="end_epoch" ColumnName="end_epoch" />
+          <ScalarProperty Name="length_in_sec" ColumnName="length_in_sec" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="phone_code" ColumnName="phone_code" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="processed" ColumnName="processed" />
+          <ScalarProperty Name="user_group" ColumnName="user_group" />
+          <ScalarProperty Name="term_reason" ColumnName="term_reason" />
+          <ScalarProperty Name="alt_dial" ColumnName="alt_dial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_pause_codes">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_pause_codes">
+        <MappingFragment StoreEntitySet="vicidial_pause_codes">
+          <ScalarProperty Name="pause_code" ColumnName="pause_code" />
+          <ScalarProperty Name="pause_code_name" ColumnName="pause_code_name" />
+          <ScalarProperty Name="billable" ColumnName="billable" />
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_statuses">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_statuses">
+        <MappingFragment StoreEntitySet="vicidial_statuses">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="selectable" ColumnName="selectable" />
+          <ScalarProperty Name="human_answered" ColumnName="human_answered" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="sale" ColumnName="sale" />
+          <ScalarProperty Name="dnc" ColumnName="dnc" />
+          <ScalarProperty Name="customer_contact" ColumnName="customer_contact" />
+          <ScalarProperty Name="not_interested" ColumnName="not_interested" />
+          <ScalarProperty Name="unworkable" ColumnName="unworkable" />
+          <ScalarProperty Name="scheduled_callback" ColumnName="scheduled_callback" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_user_groups">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_user_groups">
+        <MappingFragment StoreEntitySet="vicidial_user_groups">
+          <ScalarProperty Name="user_group" ColumnName="user_group" />
+          <ScalarProperty Name="group_name" ColumnName="group_name" />
+          <ScalarProperty Name="allowed_campaigns" ColumnName="allowed_campaigns" />
+          <ScalarProperty Name="qc_allowed_campaigns" ColumnName="qc_allowed_campaigns" />
+          <ScalarProperty Name="qc_allowed_inbound_groups" ColumnName="qc_allowed_inbound_groups" />
+          <ScalarProperty Name="group_shifts" ColumnName="group_shifts" />
+          <ScalarProperty Name="forced_timeclock_login" ColumnName="forced_timeclock_login" />
+          <ScalarProperty Name="shift_enforcement" ColumnName="shift_enforcement" />
+          <ScalarProperty Name="agent_status_viewable_groups" ColumnName="agent_status_viewable_groups" />
+          <ScalarProperty Name="agent_status_view_time" ColumnName="agent_status_view_time" />
+          <ScalarProperty Name="agent_call_log_view" ColumnName="agent_call_log_view" />
+          <ScalarProperty Name="agent_xfer_consultative" ColumnName="agent_xfer_consultative" />
+          <ScalarProperty Name="agent_xfer_dial_override" ColumnName="agent_xfer_dial_override" />
+          <ScalarProperty Name="agent_xfer_vm_transfer" ColumnName="agent_xfer_vm_transfer" />
+          <ScalarProperty Name="agent_xfer_blind_transfer" ColumnName="agent_xfer_blind_transfer" />
+          <ScalarProperty Name="agent_xfer_dial_with_customer" ColumnName="agent_xfer_dial_with_customer" />
+          <ScalarProperty Name="agent_xfer_park_customer_dial" ColumnName="agent_xfer_park_customer_dial" />
+          <ScalarProperty Name="agent_fullscreen" ColumnName="agent_fullscreen" />
+          <ScalarProperty Name="allowed_reports" ColumnName="allowed_reports" />
+          <ScalarProperty Name="webphone_url_override" ColumnName="webphone_url_override" />
+          <ScalarProperty Name="webphone_systemkey_override" ColumnName="webphone_systemkey_override" />
+          <ScalarProperty Name="webphone_dialpad_override" ColumnName="webphone_dialpad_override" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_users">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_users">
+        <MappingFragment StoreEntitySet="vicidial_users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="user_level" ColumnName="user_level" />
+          <ScalarProperty Name="user_group" ColumnName="user_group" />
+          <ScalarProperty Name="phone_login" ColumnName="phone_login" />
+          <ScalarProperty Name="phone_pass" ColumnName="phone_pass" />
+          <ScalarProperty Name="delete_users" ColumnName="delete_users" />
+          <ScalarProperty Name="delete_user_groups" ColumnName="delete_user_groups" />
+          <ScalarProperty Name="delete_lists" ColumnName="delete_lists" />
+          <ScalarProperty Name="delete_campaigns" ColumnName="delete_campaigns" />
+          <ScalarProperty Name="delete_ingroups" ColumnName="delete_ingroups" />
+          <ScalarProperty Name="delete_remote_agents" ColumnName="delete_remote_agents" />
+          <ScalarProperty Name="load_leads" ColumnName="load_leads" />
+          <ScalarProperty Name="campaign_detail" ColumnName="campaign_detail" />
+          <ScalarProperty Name="ast_admin_access" ColumnName="ast_admin_access" />
+          <ScalarProperty Name="ast_delete_phones" ColumnName="ast_delete_phones" />
+          <ScalarProperty Name="delete_scripts" ColumnName="delete_scripts" />
+          <ScalarProperty Name="modify_leads" ColumnName="modify_leads" />
+          <ScalarProperty Name="hotkeys_active" ColumnName="hotkeys_active" />
+          <ScalarProperty Name="change_agent_campaign" ColumnName="change_agent_campaign" />
+          <ScalarProperty Name="agent_choose_ingroups" ColumnName="agent_choose_ingroups" />
+          <ScalarProperty Name="closer_campaigns" ColumnName="closer_campaigns" />
+          <ScalarProperty Name="scheduled_callbacks" ColumnName="scheduled_callbacks" />
+          <ScalarProperty Name="agentonly_callbacks" ColumnName="agentonly_callbacks" />
+          <ScalarProperty Name="agentcall_manual" ColumnName="agentcall_manual" />
+          <ScalarProperty Name="vicidial_recording" ColumnName="vicidial_recording" />
+          <ScalarProperty Name="vicidial_transfers" ColumnName="vicidial_transfers" />
+          <ScalarProperty Name="delete_filters" ColumnName="delete_filters" />
+          <ScalarProperty Name="alter_agent_interface_options" ColumnName="alter_agent_interface_options" />
+          <ScalarProperty Name="closer_default_blended" ColumnName="closer_default_blended" />
+          <ScalarProperty Name="delete_call_times" ColumnName="delete_call_times" />
+          <ScalarProperty Name="modify_call_times" ColumnName="modify_call_times" />
+          <ScalarProperty Name="modify_users" ColumnName="modify_users" />
+          <ScalarProperty Name="modify_campaigns" ColumnName="modify_campaigns" />
+          <ScalarProperty Name="modify_lists" ColumnName="modify_lists" />
+          <ScalarProperty Name="modify_scripts" ColumnName="modify_scripts" />
+          <ScalarProperty Name="modify_filters" ColumnName="modify_filters" />
+          <ScalarProperty Name="modify_ingroups" ColumnName="modify_ingroups" />
+          <ScalarProperty Name="modify_usergroups" ColumnName="modify_usergroups" />
+          <ScalarProperty Name="modify_remoteagents" ColumnName="modify_remoteagents" />
+          <ScalarProperty Name="modify_servers" ColumnName="modify_servers" />
+          <ScalarProperty Name="view_reports" ColumnName="view_reports" />
+          <ScalarProperty Name="vicidial_recording_override" ColumnName="vicidial_recording_override" />
+          <ScalarProperty Name="alter_custdata_override" ColumnName="alter_custdata_override" />
+          <ScalarProperty Name="qc_enabled" ColumnName="qc_enabled" />
+          <ScalarProperty Name="qc_user_level" ColumnName="qc_user_level" />
+          <ScalarProperty Name="qc_pass" ColumnName="qc_pass" />
+          <ScalarProperty Name="qc_finish" ColumnName="qc_finish" />
+          <ScalarProperty Name="qc_commit" ColumnName="qc_commit" />
+          <ScalarProperty Name="add_timeclock_log" ColumnName="add_timeclock_log" />
+          <ScalarProperty Name="modify_timeclock_log" ColumnName="modify_timeclock_log" />
+          <ScalarProperty Name="delete_timeclock_log" ColumnName="delete_timeclock_log" />
+          <ScalarProperty Name="alter_custphone_override" ColumnName="alter_custphone_override" />
+          <ScalarProperty Name="vdc_agent_api_access" ColumnName="vdc_agent_api_access" />
+          <ScalarProperty Name="modify_inbound_dids" ColumnName="modify_inbound_dids" />
+          <ScalarProperty Name="delete_inbound_dids" ColumnName="delete_inbound_dids" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="alert_enabled" ColumnName="alert_enabled" />
+          <ScalarProperty Name="download_lists" ColumnName="download_lists" />
+          <ScalarProperty Name="agent_shift_enforcement_override" ColumnName="agent_shift_enforcement_override" />
+          <ScalarProperty Name="manager_shift_enforcement_override" ColumnName="manager_shift_enforcement_override" />
+          <ScalarProperty Name="shift_override_flag" ColumnName="shift_override_flag" />
+          <ScalarProperty Name="export_reports" ColumnName="export_reports" />
+          <ScalarProperty Name="delete_from_dnc" ColumnName="delete_from_dnc" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="user_code" ColumnName="user_code" />
+          <ScalarProperty Name="territory" ColumnName="territory" />
+          <ScalarProperty Name="allow_alerts" ColumnName="allow_alerts" />
+          <ScalarProperty Name="agent_choose_territories" ColumnName="agent_choose_territories" />
+          <ScalarProperty Name="custom_one" ColumnName="custom_one" />
+          <ScalarProperty Name="custom_two" ColumnName="custom_two" />
+          <ScalarProperty Name="custom_three" ColumnName="custom_three" />
+          <ScalarProperty Name="custom_four" ColumnName="custom_four" />
+          <ScalarProperty Name="custom_five" ColumnName="custom_five" />
+          <ScalarProperty Name="voicemail_id" ColumnName="voicemail_id" />
+          <ScalarProperty Name="agent_call_log_view_override" ColumnName="agent_call_log_view_override" />
+          <ScalarProperty Name="callcard_admin" ColumnName="callcard_admin" />
+          <ScalarProperty Name="agent_choose_blended" ColumnName="agent_choose_blended" />
+          <ScalarProperty Name="realtime_block_user_info" ColumnName="realtime_block_user_info" />
+          <ScalarProperty Name="custom_fields_modify" ColumnName="custom_fields_modify" />
+          <ScalarProperty Name="force_change_password" ColumnName="force_change_password" />
+          <ScalarProperty Name="agent_lead_search_override" ColumnName="agent_lead_search_override" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_xfer_presets">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_xfer_presets">
+        <MappingFragment StoreEntitySet="vicidial_xfer_presets">
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="preset_name" ColumnName="preset_name" />
+          <ScalarProperty Name="preset_number" ColumnName="preset_number" />
+          <ScalarProperty Name="preset_dtmf" ColumnName="preset_dtmf" />
+          <ScalarProperty Name="preset_hide_number" ColumnName="preset_hide_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vicidial_xfer_stats">
+      <EntityTypeMapping TypeName="vicidialModel.vicidial_xfer_stats">
+        <MappingFragment StoreEntitySet="vicidial_xfer_stats">
+          <ScalarProperty Name="campaign_id" ColumnName="campaign_id" />
+          <ScalarProperty Name="preset_name" ColumnName="preset_name" />
+          <ScalarProperty Name="xfer_count" ColumnName="xfer_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
