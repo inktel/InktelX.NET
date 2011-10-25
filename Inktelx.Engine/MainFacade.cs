@@ -8,12 +8,14 @@ using System.ComponentModel;
 using System.Data.Common;
 using System.Transactions;
 
-using System.Web;
+//using System.Web;
 using System.Reflection;
 using System.Data.Objects.DataClasses;
 using System.Text.RegularExpressions;
 
 using InktelX.Engine.Logging;
+
+
 
 namespace InktelX.Engine
 {
@@ -25,7 +27,6 @@ namespace InktelX.Engine
 	{
 		VicidialEntities _emv = null;
 		DbTransaction _dbt = null;
-		HttpContext _context = null;
 
 		//Events
 		public event EventHandler OnError;
@@ -42,17 +43,7 @@ namespace InktelX.Engine
 			_emv = new VicidialEntities(mysqlcs);
 		}
 
-		/// <summary>
-		/// Similar to main constructor with the addition of the HttpContext, typically passed as System.Web.HttpContext.Current.  Some API's require the context
-		/// to extrat context information such as IP address, etc.  The API's needing the context will throw an exception alerting the developer to this.
-		/// </summary>
-		/// <param name="mysqlcs"></param>
-		/// <param name="context"></param>
-		public MainFacade(string mysqlcs, HttpContext context)
-			: this(mysqlcs)
-		{
-			_context = context;
-		}
+
 
 		public MainFacade() : this(ConfigManager.ConnectionStrings.VicidialEntities) { }
 
@@ -127,6 +118,11 @@ namespace InktelX.Engine
 
 		private vicidial_admin_log AddUserLogEntry(string user, string password, string fullname, int userlevel, string userGroup)
 		{
+			return AddUserLogEntry(user, password, fullname, userlevel, userGroup, "0.0.0.0");
+		}
+
+		private vicidial_admin_log AddUserLogEntry(string user, string password, string fullname, int userlevel, string userGroup, string ipAddress)
+		{
 			vicidial_admin_log val = new vicidial_admin_log();
 			val.event_code = "ADMIN ADD USER";
 			val.event_type = "ADD";
@@ -137,10 +133,6 @@ namespace InktelX.Engine
 
 			val.event_notes = String.Format("user: {0}", user);
 
-			if (_context != null)
-				val.ip_address = _context.Request.ServerVariables["REMOTE_ADDR"];
-			else
-				val.ip_address = "0.0.0.0";
 
 			val.event_sql = String.Format("INSERT INTO vicidial_users (user,pass,full_name,user_level,user_group,phone_login,phone_pass) values(''{0}'',''{1}'',''{2}'',''{3}'',''{4}'','''','''')|",
 				user,
@@ -1428,5 +1420,8 @@ namespace InktelX.Engine
 		{
 			return _emv.vicidial_statuses;
 		}
+
+
+
 	}
 }

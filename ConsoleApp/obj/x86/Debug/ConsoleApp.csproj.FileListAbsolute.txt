@@ -1,1 +1,8 @@
 C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\bin\Debug\ConsoleApp.exe
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\bin\Debug\ConsoleApp.pdb
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\bin\Debug\InktelX.Engine.dll
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\bin\Debug\InktelX.Engine.pdb
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\obj\x86\Debug\ConsoleApp.exe
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\obj\x86\Debug\ConsoleApp.pdb
+C:\SourceSafe2\InktelX.NET\InktelX.NET\ConsoleApp\bin\Debug\ConsoleApp.exe.config
